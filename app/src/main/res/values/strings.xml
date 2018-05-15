@@ -16,6 +16,13 @@
     <string name="contrase_a_Campo">Contraseña</string>
     <string name="crear_cuenta">crear cuenta</string>
     <string name="title_activity_subir__menu">Subir_Menu</string>
+    <string name="nombre_restaurante">Nombre del restaurante</string>
+    <string name="tipo_restaurante">Tipo del restaurante</string>
+    <string name="telefono">Teléfono</string>
+    <string name="password">Password</string>
+    <string name="descripcion">Descripción</string>
+    <string name="sitio_web">Sitio web</string>
+    <string name="direccion">Dirección</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

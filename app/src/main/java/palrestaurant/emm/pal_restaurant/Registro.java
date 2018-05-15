@@ -31,7 +31,7 @@ public class Registro extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intentReg = new Intent(Registro.this, activity_registrar_restaurante.class); //"Llamamos" al registro de comensal desde pantalla actual
-                Registro.this.startActivity(intentReg);  //Comenzar la actividad de registrar comensal
+                Registro.this.startActivity(intentReg);  //Comenzar la actividad de registrar restaurante
 
             }
         });
