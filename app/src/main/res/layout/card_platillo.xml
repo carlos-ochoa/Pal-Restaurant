@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="16dp"
+    >
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/nombre_platillo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Platillo"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/platillo_photo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp" />
+
+            <TextView
+                android:id="@+id/precio_platillo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/nombre_platillo"
+                android:layout_below="@+id/nombre_platillo"
+                android:text="Precio"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/desc_platillo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/nombre_platillo"
+                android:layout_below="@+id/precio_platillo"
+                android:text="Descripcion"
+                android:textSize="10sp" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
