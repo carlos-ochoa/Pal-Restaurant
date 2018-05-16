@@ -20,7 +20,8 @@
         <activity android:name=".Registrar_Comensal" />
         <activity android:name=".Subir_Menu" />
         <activity android:name=".activity_registrar_restaurante" />
-        <activity android:name=".activity_actualizar_restaurante"></activity>
+        <activity android:name=".activity_actualizar_restaurante" />
+        <activity android:name=".activity_responder_encuesta"></activity>
     </application>
 
 </manifest>
