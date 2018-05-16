@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/Bienvenida"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_gravity="center"
@@ -19,6 +20,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/Inicio"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_gravity="center"
@@ -31,6 +33,7 @@
 
     <EditText
         style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:id="@+id/EditT_Nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -41,6 +44,7 @@
 
     <EditText
         style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:id="@+id/EditT_Nombre_Usuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/usuario_campo"
@@ -48,6 +52,7 @@
         android:textSize="18sp" />
 
     <EditText
+        android:id="@+id/EditT_Contraseña"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/contrase_a_Campo"
