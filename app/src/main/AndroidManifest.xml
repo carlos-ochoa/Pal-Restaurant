@@ -21,7 +21,11 @@
         <activity android:name=".Subir_Menu" />
         <activity android:name=".activity_registrar_restaurante" />
         <activity android:name=".activity_actualizar_restaurante" />
-        <activity android:name=".activity_responder_encuesta"></activity>
+        <activity android:name=".activity_responder_encuesta" />
+        <activity
+            android:name=".perfilRestaurante"
+            android:label="@string/title_activity_perfil_restaurante"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
