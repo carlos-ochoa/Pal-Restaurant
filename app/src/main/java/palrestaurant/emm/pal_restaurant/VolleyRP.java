@@ -1,3 +1,5 @@
+package palrestaurant.emm.pal_restaurant;
+
 import android.content.Context;
 import android.support.v4.app.Fragment;
 
