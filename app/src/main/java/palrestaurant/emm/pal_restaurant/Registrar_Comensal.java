@@ -30,13 +30,12 @@ public class Registrar_Comensal extends AppCompatActivity implements View.OnClic
         etContraseña=(EditText)findViewById(R.id.EditT_Contraseña);
         btnCrear=(Button)findViewById(R.id.btnCrear);
 
-        btnCrear.setOnClickListener(this);
+        btnCrear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-
-
-
-
-
+            }
+        });
     }
 
     @Override
