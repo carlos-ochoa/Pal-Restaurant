@@ -6,75 +6,74 @@
     android:orientation="vertical"
     tools:context=".activity_responder_encuesta">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Pregunta" />
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Pregunta" />
 
-    <RadioGroup
-    android:id="@+id/radio"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignEnd="@+id/button2"
-
-    <RadioButton
+        <RadioGroup
+        android:id="@+id/radio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Muy bueno"
-        android:id="@+id/radioButton"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:checked="false"
-        android:onClick="onRadioButtonClicked"/>
+        android:layout_alignEnd="@+id/button2">
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bueno"
-        android:id="@+id/radioButton2"
-        android:layout_below="@+id/radioButton1"
-        android:layout_centerHorizontal="true"
-        android:checked="false"
-        android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Muy bueno"
+                android:id="@+id/radioButton"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:checked="false"
+                />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Regular"
-        android:id="@+id/radioButton3"
-        android:layout_below="@+id/radioButton2"
-        android:layout_centerHorizontal="true"
-        android:checked="false"
-        android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bueno"
+                android:id="@+id/radioButton2"
+                android:layout_below="@+id/radioButton1"
+                android:layout_centerHorizontal="true"
+                android:checked="false"
+                />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Malo"
-        android:id="@+id/radioButton4"
-        android:layout_below="@+id/radioButton3"
-        android:layout_centerHorizontal="true"
-        android:checked="false"
-        android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Regular"
+                android:id="@+id/radioButton3"
+                android:layout_below="@+id/radioButton2"
+                android:layout_centerHorizontal="true"
+                android:checked="false"
+                />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Muy Malo"
-        android:id="@+id/radioButton5"
-        android:layout_below="@+id/radioButton4"
-        android:layout_centerHorizontal="true"
-        android:checked="false"
-        android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Malo"
+                android:id="@+id/radioButton4"
+                android:layout_below="@+id/radioButton3"
+                android:layout_centerHorizontal="true"
+                android:checked="false"
+                />
 
-    </RadioGroup>
-
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Muy Malo"
+                android:id="@+id/radioButton5"
+                android:layout_below="@+id/radioButton4"
+                android:layout_centerHorizontal="true"
+                android:checked="false"
+                />
+        </RadioGroup>
     <Button
         android:id="@+id/btnSiguiente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Siguiente" />
-    </LinearLayout>
+
+</LinearLayout>
