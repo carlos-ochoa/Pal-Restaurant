@@ -7,66 +7,112 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="17dp"
-        android:text="@string/bienvenido_nuevo_comensal"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="3dp"
-        android:text="@string/para_brindarle_un_mejor_servicio_necesitamos_los_siguientes_datos"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#000000"
-        android:textSize="15.5sp" />
-
-    <EditText
-        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:id="@+id/txtNombre"
-        android:hint="@string/nombre_completo"
-        android:inputType="text"
-        android:paddingTop="10dp"
-        android:textSize="19sp" />
+        android:text="Necesitas escribir la información en los campos para crear tu cuenta"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <EditText
-        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:id="@+id/editText10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/usuario_campo"
-        android:id="@+id/txtUsuario"
-        android:inputType="text"
-        android:textSize="18sp" />
+        android:ems="10"
+        android:hint="Nombre del restaurante"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="67dp" />
 
     <EditText
+        android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/contrase_a_Campo"
-        android:id="@+id/txtPassword"
+        android:autoText="false"
+        android:ems="10"
         android:inputType="textPassword"
-        android:textSize="18sp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="77dp" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Tipo"
+        tools:layout_editor_absoluteX="231dp"
+        tools:layout_editor_absoluteY="77dp" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Direccion"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="132dp" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="199dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Teléfono"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="189dp" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Sitio web"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="252dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descripcion"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="355dp" />
+
+    <EditText
+        android:id="@+id/editText9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="384dp" />
 
     <Button
-        android:id="@+id/btnCrear"
-        android:layout_width="150dp"
+        android:id="@+id/button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:background="#666"
-        android:text="@string/crear_cuenta"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp" />
-
-
+        android:background="@color/colorPrimaryDark"
+        android:text="Crear cuenta "
+        android:textColor="@android:color/background_light"
+        tools:layout_editor_absoluteX="220dp"
+        tools:layout_editor_absoluteY="447dp" />
 </LinearLayout>
