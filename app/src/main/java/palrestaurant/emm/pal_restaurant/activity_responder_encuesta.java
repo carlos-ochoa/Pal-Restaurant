@@ -11,7 +11,7 @@ public class activity_responder_encuesta extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_responder_encuesta);
-        b1 = findViewById(R.id.button);
+        b1 = findViewById(R.id.btnSiguiente);
     }
 
 }
