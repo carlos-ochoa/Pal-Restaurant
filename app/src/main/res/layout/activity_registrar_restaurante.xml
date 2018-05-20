@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Tipo"
+        android:hint="Tipo"
         tools:layout_editor_absoluteX="231dp"
         tools:layout_editor_absoluteY="77dp" />
 
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Direccion"
+        android:hint="Direccion"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="132dp" />
 
