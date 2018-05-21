@@ -21,7 +21,6 @@
             android:layout_marginTop="5dp"
             android:gravity="center"
             android:text="Nombre de usuario"
-            android:textColor="00000"
             android:textSize="22sp" />
 
         <TextView
