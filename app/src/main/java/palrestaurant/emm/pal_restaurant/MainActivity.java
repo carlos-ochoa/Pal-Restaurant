@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(JSONObject datos) {
                 try {
                     String estado = datos.getString("resultado");
-                    if (estado.equalsIgnoreCase("El usuario existe")) {
+                    if (estado.equalsIgnoreCase("El usuario si existe")) {
                         Toast.makeText(MainActivity.this, estado, Toast.LENGTH_SHORT).show();
                         finish();
                                 Intent intentReg = new Intent(MainActivity.this, Perfil_Comensal.class); //"Llamamos" al registro desde el main
