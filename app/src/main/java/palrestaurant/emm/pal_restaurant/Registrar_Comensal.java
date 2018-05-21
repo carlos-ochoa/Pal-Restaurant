@@ -23,7 +23,7 @@ import java.util.HashMap;
 
 public class Registrar_Comensal extends AppCompatActivity {
 
-    private static final String IP_REGISTRAR = "hhttp://pruebagamash.esy.es/archPHP/Registrar_Comensal_INSERT.php";
+    private static final String IP_REGISTRAR = "http://pruebagamash.esy.es/archPHP/Registrar_Comensal_INSERT.php";
 
     EditText nombre, nombre_usuario, pass;
     Button registrar;
@@ -54,9 +54,9 @@ public class Registrar_Comensal extends AppCompatActivity {
 
     private void registrarWebService(String nombre, String nombre_usuario, String pass){
         HashMap<String,String> hashMapToken = new HashMap<>();
-        hashMapToken.put("Nombre", nombre);
         hashMapToken.put("Nombre_Usuario", nombre_usuario);
         hashMapToken.put("Contraseña", pass);
+        hashMapToken.put("Nombre", nombre);
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_REGISTRAR, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){
             @Override
