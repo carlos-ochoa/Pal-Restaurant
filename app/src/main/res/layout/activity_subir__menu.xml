@@ -7,63 +7,109 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="17dp"
-        android:text="@string/bienvenido_nuevo_comensal"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="3dp"
-        android:text="@string/para_brindarle_un_mejor_servicio_necesitamos_los_siguientes_datos"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#000000"
-        android:textSize="15.5sp" />
-
-    <EditText
-        style="@style/Widget.AppCompat.AutoCompleteTextView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:hint="@string/nombre_completo"
-        android:inputType="text"
-        android:paddingTop="10dp"
-        android:textSize="19sp" />
+        android:layout_height="match_parent">
 
-    <EditText
-        style="@style/Widget.AppCompat.AutoCompleteTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/usuario_campo"
-        android:inputType="text"
-        android:textSize="18sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/contrase_a_Campo"
-        android:inputType="textPassword"
-        android:textSize="18sp" />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Agregar platillo"
+                android:textSize="16dp"
+                android:id="@+id/radioBtnAgregarP"
+                android:layout_below="@+id/radioButton3"
+                android:layout_centerHorizontal="true"
+                android:checked="false"
+                />
+            <Button
+                android:id="@+id/btnAceptar"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="10dp"
+                android:background="#666"
+                android:text="Aceptar"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
 
-    <Button
-        android:id="@+id/btnCrear"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:background="#666"
-        android:text="@string/crear_cuenta"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp" />
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/platillo" />
+
+            <Button
+                android:id="@+id/btnCambiar_foto"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="10dp"
+                android:background="#FF8800"
+                android:text="Modifique la foto"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/btnBorrarPlatillo"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="10dp"
+                android:background="#666"
+                android:text="Borre el platillo"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <EditText
+                style="@style/Widget.AppCompat.AutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre del platillo"
+                android:inputType="text"
+                android:textSize="18sp" />
+
+            <EditText
+                style="@style/Widget.AppCompat.AutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Tipo de platillo"
+                android:inputType="text"
+                android:paddingTop="10dp"
+                android:textSize="19sp" />
+
+            <EditText
+                style="@style/Widget.AppCompat.AutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Precio"
+                android:inputType="text"
+                android:paddingTop="10dp"
+                android:textSize="19sp" />
+
+            <EditText
+                style="@style/Widget.AppCompat.AutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Descripción"
+                android:inputType="text"
+                android:paddingTop="10dp"
+                android:textSize="19sp" />
 
 
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView9"
@@ -77,14 +85,13 @@
         android:ems="10"
         android:inputType="phone"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="199dp" />
+        tools:layout_editor_absoluteY="180dp" />
 
     <EditText
         android:id="@+id/txtWeb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
         android:text="Sitio web"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="252dp" />
@@ -115,4 +122,6 @@
         android:textColor="@android:color/background_light"
         tools:layout_editor_absoluteX="220dp"
         tools:layout_editor_absoluteY="447dp" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
