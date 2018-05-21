@@ -60,7 +60,7 @@ public class activity_responder_encuesta extends AppCompatActivity {
                 if(i==7)
                 {
                     siguiente.setText("Finzalizar encuesta");
-                   
+
                 }
 
 
