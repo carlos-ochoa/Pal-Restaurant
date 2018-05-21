@@ -21,7 +21,10 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String IP_REGISTRAR = ".http://pruebagamash.esy.es/archPHP/Iniciar_Sesion_GETALL.php";
+    private static final String IP_REGISTRAR = "http://pruebagamash.esy.es/archPHP/Iniciar_Sesion_GETID.php?Nombre_Usuario=";
+
+    private String USER = "";
+    private String PASSWORD = "";
 
     EditText TEnombre_usuario, TEPass;
     Button btnReg, btnIni;
@@ -51,12 +54,54 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                registrarWebService(TEnombre_usuario.getText().toString(), TEPass.getText().toString());
+                VerificarLogin(TEnombre_usuario.getText().toString(), TEPass.getText().toString());
             }
         });
     }
 
-    private void registrarWebService(String nombre_usuario, String pass){
+    public void VerificarLogin(String user, String password){
+        USER = user;
+        PASSWORD = password;
+        SolicitudJSON(IP_REGISTRAR+user);
+    }
+
+    public void SolicitudJSON(String URL){
+        JsonObjectRequest solicitud = new JsonObjectRequest(URL,null, new Response.Listener<JSONObject>(){
+            @Override
+            public void onResponse(JSONObject datos) {
+                VerificarPassword(datos);
+            }
+        },new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(MainActivity.this,"Ocurrio un error, por favor contactese con el administrador",Toast.LENGTH_SHORT).show();
+            }
+        });
+        VolleyRP.addToQueue(solicitud,mRequest,this,volley);
+    }
+
+    public void VerificarPassword(JSONObject datos){
+        try {
+            String estado = datos.getString("resultado");
+            if(estado.equals("CC")){
+                JSONObject Jsondatos = new JSONObject(datos.getString("datos"));
+                String usuario = Jsondatos.getString("Nombre_Usuario");
+                String contraseña = Jsondatos.getString("Contrasena");
+                if(usuario.equals(USER) && contraseña.equals(PASSWORD)){
+                    Toast.makeText(this,"Usted se ha logeado correctamente",Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(this,Perfil_Comensal.class);
+                    startActivity(i);
+                }
+                else Toast.makeText(this,"La contraseña es incorrecta",Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this,estado,Toast.LENGTH_SHORT).show();
+            }
+        } catch (JSONException e) {
+            Toast.makeText(MainActivity.this, "No se pudo ingresar, error inesperado", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /*private void registrarWebService(String nombre_usuario, String pass){
         HashMap<String,String> hashMapToken = new HashMap<>();
         hashMapToken.put("Nombre", nombre_usuario);
         hashMapToken.put("Contraseña", pass);
@@ -69,8 +114,8 @@ public class MainActivity extends AppCompatActivity {
                     if (estado.equalsIgnoreCase("El usuario si existe")) {
                         Toast.makeText(MainActivity.this, estado, Toast.LENGTH_SHORT).show();
                         finish();
-                                Intent intentReg = new Intent(MainActivity.this, Perfil_Comensal.class); //"Llamamos" al registro desde el main
-                                MainActivity.this.startActivity(intentReg);  //Comenzar la actividad del registro
+                        Intent intentReg = new Intent(MainActivity.this, Perfil_Comensal.class); //"Llamamos" al registro desde el main
+                        MainActivity.this.startActivity(intentReg);  //Comenzar la actividad del registro
                     } else {
                         Toast.makeText(MainActivity.this, estado, Toast.LENGTH_SHORT).show();
                     }

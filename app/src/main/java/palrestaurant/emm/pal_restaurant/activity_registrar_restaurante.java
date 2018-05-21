@@ -75,7 +75,7 @@ public class activity_registrar_restaurante extends AppCompatActivity{
     private void registrarWebService(String nombre,String pass,String tipo, String direccion, String tel, String web, String desc){
         HashMap<String,String> hashMapToken = new HashMap<>();
         hashMapToken.put("Nombre_Usuario", nombre);
-        hashMapToken.put("Contraseña", pass);
+        hashMapToken.put("Contrasena", pass);
         hashMapToken.put("Tipo_Rest", tipo);
         hashMapToken.put("Direccion", direccion);
         hashMapToken.put("Telefono", tel);

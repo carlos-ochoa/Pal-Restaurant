@@ -55,7 +55,7 @@ public class Registrar_Comensal extends AppCompatActivity {
     private void registrarWebService(String nombre, String nombre_usuario, String pass){
         HashMap<String,String> hashMapToken = new HashMap<>();
         hashMapToken.put("Nombre_Usuario", nombre_usuario);
-        hashMapToken.put("Contraseña", pass);
+        hashMapToken.put("Contrasena", pass);
         hashMapToken.put("Nombre", nombre);
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_REGISTRAR, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){
