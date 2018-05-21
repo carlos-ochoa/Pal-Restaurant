@@ -1,9 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Buscar_Platillo">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:text="Selecciona y escribe los filtros de búsqueda"
+                android:textSize="16dp" />
+
+            <Switch
+                android:id="@+id/SZonaFuma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="13dp"
+                android:text="Zona de fumadores                                    " />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="#000000"
+                android:text="Selecciona y escribe los filtros de búsqueda"
+                android:textSize="16dp" />
+
+            <Button
+                android:id="@+id/btnAceptar"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="10dp"
+                android:background="#666"
+                android:text="Aceptar"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/platillo" />
+
+            <Button
+                android:id="@+id/btnCambiar_foto"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="10dp"
+                android:background="#FF8800"
+                android:text="Modifique la foto"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/btnBorrarPlatillo"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="10dp"
+                android:background="#666"
+                android:text="Borre el platillo"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <EditText
+                style="@style/Widget.AppCompat.AutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre del platillo"
+                android:inputType="text"
+                android:textSize="18sp" />
+
+            <EditText
+                style="@style/Widget.AppCompat.AutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Tipo de platillo"
+                android:inputType="text"
+                android:paddingTop="10dp"
+                android:textSize="19sp" />
+
+            <EditText
+                style="@style/Widget.AppCompat.AutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Precio"
+                android:inputType="text"
+                android:paddingTop="10dp"
+                android:textSize="19sp" />
+
+            <EditText
+                style="@style/Widget.AppCompat.AutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Descripción"
+                android:inputType="text"
+                android:paddingTop="10dp"
+                android:textSize="19sp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

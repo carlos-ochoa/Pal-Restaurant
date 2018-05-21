@@ -21,7 +21,7 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String IP_REGISTRAR = "http://pruebagamash.esy.es/archPHP/Iniciar_Sesion_GETID.php?Nombre_Usuario=";
+    private String IP_REGISTRAR = "http://pruebagamash.esy.es/archPHP/Iniciar_Sesion_GETID.php?Nombre_Usuario=";
 
     private String USER = "";
     private String PASSWORD = "";
@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         volley = VolleyRP.getInstance(this);
         mRequest = volley.getRequestQueue();
 
+        TEnombre_usuario = findViewById(R.id.EditT_Nombre_Usuario);
+        TEPass = findViewById(R.id.EditT_Contraseña);
         btnIni = findViewById(R.id.btnIni);
         btnReg = findViewById(R.id.btnReg);  //Creamos el botòn que nos llevará a registrar usuario.
 
@@ -53,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         btnIni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 VerificarLogin(TEnombre_usuario.getText().toString(), TEPass.getText().toString());
             }
         });
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this,estado,Toast.LENGTH_SHORT).show();
             }
         } catch (JSONException e) {
-            Toast.makeText(MainActivity.this, "No se pudo ingresar, error inesperado", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
     }
 
