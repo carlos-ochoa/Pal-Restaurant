@@ -90,6 +90,8 @@ public class activity_registrar_restaurante extends AppCompatActivity{
                     if (estado.equalsIgnoreCase("El usuario se registró correctamente")) {
                         Toast.makeText(activity_registrar_restaurante.this, estado, Toast.LENGTH_SHORT).show();
                         finish();
+                        Intent intentReg = new Intent(activity_registrar_restaurante.this, perfilRestaurante.class); //"Llamamos" al registro desde el main
+                        activity_registrar_restaurante.this.startActivity(intentReg);
                     } else {
                         Toast.makeText(activity_registrar_restaurante.this, estado, Toast.LENGTH_SHORT).show();
                     }

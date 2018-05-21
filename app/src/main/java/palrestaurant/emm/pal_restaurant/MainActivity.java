@@ -21,7 +21,7 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String IP_REGISTRAR = ".http://pruebagamash.esy.es/archPHP/Iniciar_Sesion_GETID.php";
+    private static final String IP_REGISTRAR = ".http://pruebagamash.esy.es/archPHP/Iniciar_Sesion_GETALL.php";
 
     EditText TEnombre_usuario, TEPass;
     Button btnReg, btnIni;
@@ -69,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
                     if (estado.equalsIgnoreCase("El usuario existe")) {
                         Toast.makeText(MainActivity.this, estado, Toast.LENGTH_SHORT).show();
                         finish();
+                                Intent intentReg = new Intent(MainActivity.this, Perfil_Comensal.class); //"Llamamos" al registro desde el main
+                                MainActivity.this.startActivity(intentReg);  //Comenzar la actividad del registro
                     } else {
                         Toast.makeText(MainActivity.this, estado, Toast.LENGTH_SHORT).show();
                     }
