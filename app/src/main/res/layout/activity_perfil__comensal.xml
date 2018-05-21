@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="Perfil_Comensal">
+
+        <ImageView
+            android:layout_width="600dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="1dp"
+            android:contentDescription="comensal_imagen"
+            android:src="@drawable/comensal1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Nombre de usuario"
+            android:textColor="00000"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Nombre completo"
+            android:textSize="19sp" />
+
+        <Button
+            android:id="@+id/btnCambiar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:background="#666"
+            android:text="Cambiar Informacion"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/btnBuscar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="#ff8800"
+            android:text="Buscar Restaurante"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/btnEliminar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="#FF0000"
+            android:text="Eliminar cuenta"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp" />
+
+</LinearLayout>

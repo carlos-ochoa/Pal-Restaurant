@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="palrestaurant.emm.pal_restaurant">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,6 +28,7 @@
             android:name=".perfilRestaurante"
             android:label="@string/title_activity_perfil_restaurante"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Perfil_Comensal"></activity>
     </application>
 
 </manifest>
