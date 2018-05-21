@@ -16,6 +16,7 @@
         android:src="@drawable/icono_usuario" />
 
     <EditText
+        android:id="@+id/EditT_Nombre_Usuario"
         style="@style/Widget.AppCompat.AutoCompleteTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,6 +26,7 @@
         android:textSize="19sp" />
 
     <EditText
+        android:id="@+id/EditT_Contraseña"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/ingresar_contrase_a"
