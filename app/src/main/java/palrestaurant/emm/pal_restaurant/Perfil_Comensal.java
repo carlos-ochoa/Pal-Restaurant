@@ -8,14 +8,16 @@ import android.widget.Button;
 
 public class Perfil_Comensal extends AppCompatActivity {
 
-    Button btnBuscar;
+    Button btnBuscar, btnCambiar, btnEliminar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil__comensal);
 
-        btnBuscar = findViewById(R.id.btnBuscar);  //Creamos el botòn que nos llevará a registrar usuario.
+        btnBuscar = findViewById(R.id.btnBuscar);
+        btnCambiar = findViewById(R.id.btnCambiar);
+        btnEliminar = findViewById(R.id.btnEliminar);
 
         btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,5 +27,21 @@ public class Perfil_Comensal extends AppCompatActivity {
 
             }
         });
+
+        btnCambiar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentReg = new Intent(Perfil_Comensal.this, ActualizarComensal.class); //"Llamamos" al registro desde el main
+                Perfil_Comensal.this.startActivity(intentReg);  //Comenzar la actividad del registro
+            }
+        });
+
+        btnEliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                    }
+        });
+
     }
 }
