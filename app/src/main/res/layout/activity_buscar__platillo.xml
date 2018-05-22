@@ -30,49 +30,102 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="13dp"
                 android:layout_marginTop="13dp"
-                android:text="Zona de fumadores                                    " />
+                android:textSize="15dp"
+                android:text="Zona de fumadores                               " />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
                 android:textColor="#000000"
-                android:text="Selecciona y escribe los filtros de búsqueda"
+                android:text="Elija el tipo de comida"
                 android:textSize="16dp" />
 
-            <Button
-                android:id="@+id/btnAceptar"
-                android:layout_width="100dp"
+
+            <RadioGroup
+                android:id="@+id/radio"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="10dp"
-                android:background="#666"
-                android:text="Aceptar"
-                android:textColor="#FFFFFF"
-                android:textSize="13sp" />
+                android:layout_alignEnd="@+id/btns">
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="120dp"
-
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="16dp"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/platillo" />
-
-            <Button
-                android:id="@+id/btnCambiar_foto"
-                android:layout_width="100dp"
+            <RadioButton
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="65dp"
+                android:text="Gourmet"
+                android:id="@+id/radioBtnGourmet"
+                android:layout_centerHorizontal="true"
+                android:checked="false"
+                />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Especialidad"
+                    android:id="@+id/radioBtnEsp"
+                    android:layout_below="@+id/radioBtnGourmet"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:checked="false"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Familiar"
+                    android:id="@+id/radioBtnFam"
+                    android:layout_below="@+id/radioBtnEsp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:checked="false"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buffet"
+                    android:id="@+id/radioBtnBuf"
+                    android:layout_below="@+id/radioBtnFam"
+                    android:layout_centerHorizontal="true"
+                    android:checked="false"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Comida rápida"
+                    android:id="@+id/radioBtnRap"
+                    android:layout_below="@+id/radioBtnBuf"
+                    android:layout_centerHorizontal="true"
+                    android:checked="false"
+                    />
+            </RadioGroup>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:background="#FF8800"
-                android:text="Modifique la foto"
-                android:textColor="#FFFFFF"
-                android:textSize="13sp" />
+                android:layout_marginLeft="10dp"
+                android:hint="Escriba el nombre del platillo a buscar"
+                />
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            android:text="Elija el precio máximo que desea pagar"
+            android:textSize="16dp" />
+            
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                >
+            </Spinner>
 
             <Button
                 android:id="@+id/btnBorrarPlatillo"
@@ -80,50 +133,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="65dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:background="#666"
-                android:text="Borre el platillo"
+                android:text="Buscar"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp" />
-
-            <EditText
-                style="@style/Widget.AppCompat.AutoCompleteTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nombre del platillo"
-                android:inputType="text"
-                android:textSize="18sp" />
-
-            <EditText
-                style="@style/Widget.AppCompat.AutoCompleteTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:hint="Tipo de platillo"
-                android:inputType="text"
-                android:paddingTop="10dp"
-                android:textSize="19sp" />
-
-            <EditText
-                style="@style/Widget.AppCompat.AutoCompleteTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:hint="Precio"
-                android:inputType="text"
-                android:paddingTop="10dp"
-                android:textSize="19sp" />
-
-            <EditText
-                style="@style/Widget.AppCompat.AutoCompleteTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:hint="Descripción"
-                android:inputType="text"
-                android:paddingTop="10dp"
-                android:textSize="19sp" />
-
 
         </LinearLayout>
     </ScrollView>

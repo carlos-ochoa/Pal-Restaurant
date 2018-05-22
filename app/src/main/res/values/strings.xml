@@ -1,4 +1,13 @@
 <resources>
+
+    <string-array name="precios">
+        <item>Menos de 100 pesos</item>
+        <item>Entre 100 y 300 pesos</item>
+        <item>Entre 300 y 500 pesos</item>
+        <item>Entre 500 y 1000 pesos</item>
+        <item>Más de 1000 pesos</item>
+    </string-array>
+
     <string name="app_name">Pal-Restaurant</string>
     <string name="usuario">usuario</string>
     <string name="ingresar_usuario">Ingresar Usuario</string>
@@ -25,6 +34,7 @@
     <string name="direccion">Dirección</string>
     <string name="imagenRest">Imagen restaurante</string>
     <string name="large_text">
+
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
