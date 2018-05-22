@@ -47,15 +47,16 @@ public class Registrar_Comensal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                registrarWebService(nombre.getText().toString(),nombre_usuario.getText().toString(),pass.getText().toString());
+                registrarWebService(nombre.getText().toString(),nombre_usuario.getText().toString(),pass.getText().toString(), "Comensal");
             }
         });
     }
 
-    private void registrarWebService(String nombre, String nombre_usuario, String pass){
+    private void registrarWebService(String nombre, String nombre_usuario, String pass, String tipoUsuario){
         HashMap<String,String> hashMapToken = new HashMap<>();
         hashMapToken.put("Nombre_Usuario", nombre_usuario);
         hashMapToken.put("Contrasena", pass);
+        hashMapToken.put("Tipo_Usuario", tipoUsuario);
         hashMapToken.put("Nombre", nombre);
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_REGISTRAR, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){

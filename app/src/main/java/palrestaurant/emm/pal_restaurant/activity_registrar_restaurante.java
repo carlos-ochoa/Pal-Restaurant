@@ -67,15 +67,16 @@ public class activity_registrar_restaurante extends AppCompatActivity{
             @Override
             public void onClick(View v) {
 
-                registrarWebService(nombre.getText().toString(),pass.getText().toString(),tipo.getText().toString(), direccion.getText().toString(), tel.getText().toString(), web.getText().toString(), desc.getText().toString());
+                registrarWebService(nombre.getText().toString(),pass.getText().toString(),tipo.getText().toString(), direccion.getText().toString(), tel.getText().toString(), web.getText().toString(), desc.getText().toString(), "Restaurante");
             }
         });
     }
 
-    private void registrarWebService(String nombre,String pass,String tipo, String direccion, String tel, String web, String desc){
+    private void registrarWebService(String nombre,String pass,String tipo, String direccion, String tel, String web, String desc, String tipoUsuario){
         HashMap<String,String> hashMapToken = new HashMap<>();
         hashMapToken.put("Nombre_Usuario", nombre);
         hashMapToken.put("Contrasena", pass);
+        hashMapToken.put("Tipo_Usuario", tipoUsuario);
         hashMapToken.put("Tipo_Rest", tipo);
         hashMapToken.put("Direccion", direccion);
         hashMapToken.put("Telefono", tel);
