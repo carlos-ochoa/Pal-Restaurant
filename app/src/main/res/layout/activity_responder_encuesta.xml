@@ -7,13 +7,14 @@
     android:orientation="vertical"
     tools:context=".activity_responder_encuesta">
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Pregunta" />
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="¿Cómo calificaría la cortesía y trato de los empleados?"
+        android:textSize="22sp" />
 
         <RadioGroup
         android:id="@+id/radio"
@@ -25,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Muy bueno"
-                android:id="@+id/radioButton"
+                android:id="@+id/radioButton1"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:checked="false"
@@ -71,10 +72,13 @@
                 android:checked="false"
                 />
         </RadioGroup>
+
     <Button
         android:id="@+id/btnSiguiente"
+        style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?android:attr/colorPressedHighlight"
         android:text="Siguiente" />
 
 </LinearLayout>
