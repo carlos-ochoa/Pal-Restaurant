@@ -89,7 +89,7 @@ public class activity_responder_encuesta extends AppCompatActivity {
 
 
     }
-//SIRVE
+//SIRVEs
     private void insertar_respuestas(
             int idRestaurante,int Pre1,int Pre2,int Pre3, int Pre4,int Pre5,
             int Pre6, int Pre7, int Pre8
