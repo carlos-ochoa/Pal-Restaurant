@@ -81,4 +81,12 @@
         android:background="?android:attr/colorPressedHighlight"
         android:text="Siguiente" />
 
+    <Button
+        android:id="@+id/btnFinalizar"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Finalizar Encuesta" />
+
 </LinearLayout>

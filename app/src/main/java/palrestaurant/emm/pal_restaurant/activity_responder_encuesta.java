@@ -24,7 +24,7 @@ import java.util.HashMap;
 public class activity_responder_encuesta extends AppCompatActivity {
 
     private static final String IP_REGISTRAR = "http://pruebagamash.esy.es/archPHP/insertar_encuesta_post.php";
-    Button siguiente;
+    Button siguiente, finalizar;
     RadioButton r1,r2,r3,r4,r5;
     TextView pregunta;
     int i=0;
@@ -47,37 +47,43 @@ public class activity_responder_encuesta extends AppCompatActivity {
         volley = VolleyRP.getInstance(this);
         mRequest = volley.getRequestQueue();
         siguiente = findViewById(R.id.btnSiguiente);
+        finalizar = findViewById(R.id.btnFinalizar);
         pregunta = findViewById(R.id.text);
         r1=findViewById(R.id.radioButton1);
         r2=findViewById(R.id.radioButton2);
         r3=findViewById(R.id.radioButton3);
         r4=findViewById(R.id.radioButton4);
         r5=findViewById(R.id.radioButton5);
+        for (int j=0; j<7; j++)
+            respuestas[j]=0;
+
 
         siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 i++;
-                if(i<7)
-                {
+                if (i <= 7) {
                     if (r1.isChecked())
-                        respuestas[i]=5;
+                        respuestas[i] = 5;
                     if (r2.isChecked())
-                        respuestas[i]=4;
+                        respuestas[i] = 4;
                     if (r3.isChecked())
-                        respuestas[i]=3;
+                        respuestas[i] = 3;
                     if (r4.isChecked())
-                        respuestas[i]=2;
+                        respuestas[i] = 2;
                     if (r2.isChecked())
-                        respuestas[i]=1;
+                        respuestas[i] = 1;
                     pregunta.setText(preguntas[i]);
 
                 }
-                if(i==7) {
-                    siguiente.setText("Finzalizar encuesta");
-                    insertar_respuestas(123, respuestas[0], respuestas[1], respuestas[2], respuestas[3], respuestas[4],
-                            respuestas[5], respuestas[6], respuestas[7]);
-                }
+            }
+        });
+
+        finalizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                insertar_respuestas(123, respuestas[0], respuestas[1], respuestas[2], respuestas[3], respuestas[4],
+                        respuestas[5], respuestas[6], respuestas[7]);
             }
         });
 
@@ -99,11 +105,11 @@ public class activity_responder_encuesta extends AppCompatActivity {
         hashMapToken.put("Valor_Pre7", Pre7);
         hashMapToken.put("Valor_Pre8", Pre8);
 
-        JsonObjectRequest solicitu = new JsonObjectRequest(Request.Method.POST, IP_REGISTRAR, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){
+        JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_REGISTRAR, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){
             @Override
             public void onResponse(JSONObject datos) {
                 try {
-                    String estado = datos.getString("Resultado");
+                    String estado = datos.getString("resultado");
                     if (estado.equalsIgnoreCase("Gracias por contestar")) {
                         Toast.makeText(activity_responder_encuesta.this, estado, Toast.LENGTH_SHORT).show();
                         finish();
@@ -120,7 +126,7 @@ public class activity_responder_encuesta extends AppCompatActivity {
                 Toast.makeText(activity_responder_encuesta.this, "Error", Toast.LENGTH_SHORT).show();
             }
         });
-        VolleyRP.addToQueue(solicitu, mRequest, this, volley);
+        VolleyRP.addToQueue(solicitud, mRequest, this, volley);
     }
 
 
