@@ -16,6 +16,7 @@
             android:src="@drawable/comensal1" />
 
         <TextView
+            android:id="@+id/TVNombre_Usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -24,6 +25,7 @@
             android:textSize="22sp" />
 
         <TextView
+            android:id="@+id/TVNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

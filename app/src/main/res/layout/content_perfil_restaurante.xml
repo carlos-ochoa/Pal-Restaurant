@@ -22,7 +22,7 @@
             android:layout_height="173dp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/TVNombreRest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -56,8 +56,8 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="#FF0000"
+            android:layout_marginTop="15dp"
+            android:background="#ff0000"
             android:text="Eliminar cuenta"
             android:textColor="#FFFFFF"
             android:textSize="17sp" />
