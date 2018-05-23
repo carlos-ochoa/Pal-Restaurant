@@ -21,7 +21,7 @@ import java.util.HashMap;
 
 public class Perfil_Comensal extends AppCompatActivity {
 
-    private static final String IP_BORRCOM = "http://pruebagamash.esy.es/archPHP/Borrar_Comensal.php";
+    private static final String IP_BORRCOM = "http://pruebagamash.esy.es/archPHP/Eliminar_Com.php";
 
     Button btnBuscar, btnCambiar, btnEliminar;
     TextView TVNombre_Usuario, TVNombre;

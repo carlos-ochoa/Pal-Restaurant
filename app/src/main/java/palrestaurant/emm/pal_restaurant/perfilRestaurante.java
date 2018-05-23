@@ -25,7 +25,7 @@ import java.util.HashMap;
 
 public class perfilRestaurante extends AppCompatActivity {
 
-    private static final String IP_BORRCOM = "http://pruebagamash.esy.es/archPHP/Borrar_Comensal.php";
+    private static final String IP_BORRCOM = "http://pruebagamash.esy.es/archPHP/Eliminar_Rest_2.php";
 
     View btnEliminar;
     private VolleyRP volley;
