@@ -21,7 +21,7 @@ import java.util.HashMap;
 
 public class ActualizarComensal extends AppCompatActivity {
 
-    private static final String IP_ACTCOM = "http://pruebagamash.esy.es/archPHP/Actualizar_Com_1.php";
+    private static final String IP_ACTCOM = "http://pruebagamash.esy.es/archPHP/Actualizar_Comensal.php";
 
     EditText Nombre, Nombre_usuario, ContActual, contNueva;
     Button btnCambiarFoto, btnAct;
