@@ -105,7 +105,7 @@ public class activity_responder_encuesta extends AppCompatActivity {
         hashMapToken.put("Valor_Pre7", Pre7);
         hashMapToken.put("Valor_Pre8", Pre8);
 
-        JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_REGISTRAR, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){
+        JsonObjectRequest solicitu = new JsonObjectRequest(Request.Method.POST, IP_REGISTRAR, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){
             @Override
             public void onResponse(JSONObject datos) {
                 try {
@@ -126,7 +126,7 @@ public class activity_responder_encuesta extends AppCompatActivity {
                 Toast.makeText(activity_responder_encuesta.this, "Error", Toast.LENGTH_SHORT).show();
             }
         });
-        VolleyRP.addToQueue(solicitud, mRequest, this, volley);
+        VolleyRP.addToQueue(solicitu, mRequest, this, volley);
     }
 
 
