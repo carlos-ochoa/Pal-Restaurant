@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         btnReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentReg = new Intent(MainActivity.this, activity_responder_encuesta.class); //"Llamamos" al registro desde el main
+                Intent intentReg = new Intent(MainActivity.this, Registro.class); //"Llamamos" al registro desde el main
                 MainActivity.this.startActivity(intentReg);  //Comenzar la actividad del registro
 
             }
