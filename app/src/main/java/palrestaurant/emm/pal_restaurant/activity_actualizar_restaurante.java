@@ -23,7 +23,7 @@ public class activity_actualizar_restaurante extends AppCompatActivity {
     private static final String IP_ACTREST = "http://pruebagamash.esy.es/archPHP/Actualizar_Restaurante.php";
 
     Button btnAct;
-    EditText ET_Nombre_Usuario, ET_Tipo, ET_Direccion, ET_Telef, ET_Sitio_W, ET_Contraseña, ET_ContraseñaNueva, ET_Descripcion, ET_NoTen;
+    EditText ET_Nombre_Usuario, ET_Nombre, ET_Tipo, ET_Direccion, ET_Telef, ET_Sitio_W, ET_Contraseña, ET_ContraseñaNueva, ET_Descripcion, ET_NoTen;
     private VolleyRP volley;
     private RequestQueue mRequest;
 
@@ -36,6 +36,7 @@ public class activity_actualizar_restaurante extends AppCompatActivity {
 
         btnAct= findViewById(R.id.btnAct);
         ET_Nombre_Usuario= findViewById(R.id.ET_Nombre_Usuario);
+        ET_Nombre= findViewById(R.id.ET_Nombre_Usuario);
         ET_Tipo=findViewById(R.id.ET_Tipo);
         ET_Direccion= findViewById(R.id.ET_Direccion);
         ET_Telef=findViewById(R.id.ET_Telef);
@@ -48,14 +49,15 @@ public class activity_actualizar_restaurante extends AppCompatActivity {
         btnAct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActualizarWebService(ET_Nombre_Usuario.getText().toString(), ET_Tipo.getText().toString(),ET_Direccion.getText().toString(), ET_Telef.getText().toString(), ET_Sitio_W.getText().toString(), ET_Contraseña.getText().toString(),ET_ContraseñaNueva.getText().toString(), ET_Descripcion.getText().toString(), ET_NoTen.getText().toString());
+                ActualizarWebService(ET_Nombre_Usuario.getText().toString(), ET_Nombre.getText().toString(),  ET_Tipo.getText().toString(),ET_Direccion.getText().toString(), ET_Telef.getText().toString(), ET_Sitio_W.getText().toString(), ET_Contraseña.getText().toString(),ET_ContraseñaNueva.getText().toString(), ET_Descripcion.getText().toString(), ET_NoTen.getText().toString());
             }
         });
     }
 
-    private void ActualizarWebService(String Nombre_Usuario, String Tipo, String Direccion, String Telef, String Sitio_Web, String Contraseña, String ContraseñaNueva, String Descripcion, String Numero_Tenedores) {
+    private void ActualizarWebService(String Nombre_Usuario, String Nombre, String Tipo, String Direccion, String Telef, String Sitio_Web, String Contraseña, String ContraseñaNueva, String Descripcion, String Numero_Tenedores) {
         HashMap<String,String> hashMapToken = new HashMap<>();
         hashMapToken.put("Nombre_Usuario", Nombre_Usuario);
+        hashMapToken.put("Nombre", Nombre);
         hashMapToken.put("Tipo_Rest", Tipo);
         hashMapToken.put("Direccion", Direccion);
         hashMapToken.put("Telefono", Telef);

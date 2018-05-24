@@ -30,7 +30,7 @@ public class perfilRestaurante extends AppCompatActivity {
     View btnEliminar;
     private VolleyRP volley;
     private RequestQueue mRequest;
-    TextView TVNombreRest;
+    TextView TVNombreRest, TVNombre_Usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,7 @@ public class perfilRestaurante extends AppCompatActivity {
 
         btnEliminar = findViewById(R.id.btnEliminar);
         TVNombreRest = findViewById(R.id.TVNombreRest);
+        TVNombre_Usuario = findViewById(R.id.TVNombreRest);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -64,7 +65,7 @@ public class perfilRestaurante extends AppCompatActivity {
         btnEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BorrarWebService(TVNombreRest.getText().toString());
+                BorrarWebService(TVNombre_Usuario.getText().toString(), TVNombreRest.getText().toString());
 
             }
         });
@@ -73,8 +74,9 @@ public class perfilRestaurante extends AppCompatActivity {
 
     }
 
-    private void BorrarWebService(String TVNombreRest) {
+    private void BorrarWebService(String TVNombre_Usuario, String TVNombreRest) {
         HashMap<String,String> hashMapToken = new HashMap<>();
+        hashMapToken.put("Nombre_Usuario", TVNombre_Usuario);
         hashMapToken.put("Nombre", TVNombreRest);
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_BORRCOM, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){

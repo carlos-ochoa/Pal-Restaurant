@@ -77,6 +77,7 @@ public class activity_registrar_restaurante extends AppCompatActivity{
         hashMapToken.put("Nombre_Usuario", nombre);
         hashMapToken.put("Contrasena", pass);
         hashMapToken.put("Tipo_Usuario", tipoUsuario);
+        hashMapToken.put("Nombre", nombre);
         hashMapToken.put("Tipo_Rest", tipo);
         hashMapToken.put("Direccion", direccion);
         hashMapToken.put("Telefono", tel);
