@@ -63,7 +63,7 @@ public class activity_registrar_restaurante extends AppCompatActivity{
         web = (EditText) findViewById(R.id.txtWeb);
         desc = (EditText) findViewById(R.id.txtDesc);
         registrar = (Button) findViewById(R.id.btnCrear1);
-        nombreRest = nombre.getText().toString();
+
 
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,14 +78,14 @@ public class activity_registrar_restaurante extends AppCompatActivity{
         HashMap<String,String> hashMapToken = new HashMap<>();
         hashMapToken.put("Nombre_Usuario", nombre);
         hashMapToken.put("Contrasena", pass);
+        hashMapToken.put("Nombre_Restaurante", nombre);
         hashMapToken.put("Tipo_Usuario", tipoUsuario);
-        hashMapToken.put("Nombre", nombre);
         hashMapToken.put("Tipo_Rest", tipo);
         hashMapToken.put("Direccion", direccion);
         hashMapToken.put("Telefono", tel);
         hashMapToken.put("Sitio_Web", web);
         hashMapToken.put("Descripcion", desc);
-        hashMapToken.put("Nombre_Restaurante", nombreRest);
+
 
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_REGISTRAR, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){
