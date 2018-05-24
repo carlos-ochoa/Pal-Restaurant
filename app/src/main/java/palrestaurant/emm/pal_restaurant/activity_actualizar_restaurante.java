@@ -49,21 +49,21 @@ public class activity_actualizar_restaurante extends AppCompatActivity {
         btnAct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActualizarWebService(ET_Nombre_Usuario.getText().toString(), ET_Nombre.getText().toString(),  ET_Tipo.getText().toString(),ET_Direccion.getText().toString(), ET_Telef.getText().toString(), ET_Sitio_W.getText().toString(), ET_Contraseña.getText().toString(),ET_ContraseñaNueva.getText().toString(), ET_Descripcion.getText().toString(), ET_NoTen.getText().toString());
+                ActualizarWebService(ET_Nombre_Usuario.getText().toString(), ET_ContraseñaNueva.getText().toString(), ET_Contraseña.getText().toString(), ET_Nombre.getText().toString(),  ET_Tipo.getText().toString(),ET_Direccion.getText().toString(), ET_Telef.getText().toString(), ET_Sitio_W.getText().toString(), ET_Descripcion.getText().toString(), ET_NoTen.getText().toString());
             }
         });
     }
 
-    private void ActualizarWebService(String Nombre_Usuario, String Nombre, String Tipo, String Direccion, String Telef, String Sitio_Web, String Contraseña, String ContraseñaNueva, String Descripcion, String Numero_Tenedores) {
+    private void ActualizarWebService(String Nombre_Usuario, String ContraseñaNueva, String Contraseña, String Nombre, String Tipo, String Direccion, String Telef, String Sitio_Web, String Descripcion, String Numero_Tenedores) {
         HashMap<String,String> hashMapToken = new HashMap<>();
         hashMapToken.put("Nombre_Usuario", Nombre_Usuario);
+        hashMapToken.put("ContraseñaNueva", ContraseñaNueva);
+        hashMapToken.put("Contrasena", Contraseña);
         hashMapToken.put("Nombre", Nombre);
         hashMapToken.put("Tipo_Rest", Tipo);
         hashMapToken.put("Direccion", Direccion);
         hashMapToken.put("Telefono", Telef);
         hashMapToken.put("Sitio_Web", Sitio_Web);
-        hashMapToken.put("Contrasena", Contraseña);
-        hashMapToken.put("ContraseñaNueva", ContraseñaNueva);
         hashMapToken.put("Descripcion", Descripcion);
         hashMapToken.put("Numero_Tenedores", Numero_Tenedores);
 

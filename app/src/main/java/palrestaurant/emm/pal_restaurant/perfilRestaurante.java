@@ -65,7 +65,7 @@ public class perfilRestaurante extends AppCompatActivity {
         btnEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BorrarWebService(TVNombre_Usuario.getText().toString(), TVNombreRest.getText().toString());
+                BorrarWebService( TVNombreRest.getText().toString(), TVNombre_Usuario.getText().toString());
 
             }
         });
@@ -74,10 +74,11 @@ public class perfilRestaurante extends AppCompatActivity {
 
     }
 
-    private void BorrarWebService(String TVNombre_Usuario, String TVNombreRest) {
+    private void BorrarWebService(String TVNombreRest, String TVNombre_Usuario) {
         HashMap<String,String> hashMapToken = new HashMap<>();
-        hashMapToken.put("Nombre_Usuario", TVNombre_Usuario);
         hashMapToken.put("Nombre", TVNombreRest);
+        hashMapToken.put("Nombre_Usuario", TVNombre_Usuario);
+
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_BORRCOM, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){
             @Override
