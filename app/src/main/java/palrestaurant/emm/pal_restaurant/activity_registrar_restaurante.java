@@ -43,6 +43,7 @@ public class activity_registrar_restaurante extends AppCompatActivity{
 
     EditText nombre, tipo, pass, direccion, tel, web, desc;
     Button registrar;
+    String nombreRest;
     private VolleyRP volley;
     private RequestQueue mRequest;
 
@@ -62,6 +63,7 @@ public class activity_registrar_restaurante extends AppCompatActivity{
         web = (EditText) findViewById(R.id.txtWeb);
         desc = (EditText) findViewById(R.id.txtDesc);
         registrar = (Button) findViewById(R.id.btnCrear1);
+        nombreRest = nombre.getText().toString();
 
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +85,8 @@ public class activity_registrar_restaurante extends AppCompatActivity{
         hashMapToken.put("Telefono", tel);
         hashMapToken.put("Sitio_Web", web);
         hashMapToken.put("Descripcion", desc);
+        hashMapToken.put("Nombre_Restaurante", nombreRest);
+
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_REGISTRAR, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){
             @Override
