@@ -91,12 +91,14 @@ public class MainActivity extends AppCompatActivity {
                 String tipoUsuario = Jsondatos.getString("Tipo_Usuario");
                 if(usuario.equals(USER) && contraseña.equals(PASSWORD)){
                     Toast.makeText(this,"Usted se ha logeado correctamente",Toast.LENGTH_SHORT).show();
-                    if(tipoUsuario.equals("Comensal")){
-                        Intent i = new Intent(this,Perfil_Comensal.class);
+                    if(tipoUsuario.equals("Restaurante")){
+                        Toast.makeText(this,"Usted se ha logeado correctamente RESTAURANTE",Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(this,perfilRestaurante.class);
                         i.putExtra("nombreUsuario",usuario);
                         startActivity(i);
-                    } else if(tipoUsuario.equals("Restaurante")){
-                        Intent i = new Intent(this,perfilRestaurante.class);
+                    }
+                    if(tipoUsuario.equals("Comensal")){
+                        Intent i = new Intent(this,Perfil_Comensal.class);
                         i.putExtra("nombreUsuario",usuario);
                         startActivity(i);
                     }
