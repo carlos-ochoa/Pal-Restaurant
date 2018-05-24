@@ -1,5 +1,6 @@
 package palrestaurant.emm.pal_restaurant;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,7 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.widget.Button;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -20,14 +21,16 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.awt.Button;
+
 import java.util.HashMap;
 
 public class perfilRestaurante extends AppCompatActivity {
 
     private static final String IP_BORRCOM = "http://pruebagamash.esy.es/archPHP/Eliminar_Rest_2.php";
 
-    View btnEliminar;
+    String nombreRestaurante = getIntent().getStringExtra("nombreUsuario");
+
+    Button btnEliminar;
     private VolleyRP volley;
     private RequestQueue mRequest;
     TextView TVNombreRest, TVNombre_Usuario;
@@ -54,8 +57,11 @@ public class perfilRestaurante extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                       //.setAction("Action", null).show();
+                        Intent i = new Intent(perfilRestaurante.this,Subir_Menu.class);
+                        i.putExtra("nombreRest",nombreRestaurante);
+                        startActivity(i);
             }
         });
 

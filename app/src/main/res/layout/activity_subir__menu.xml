@@ -16,16 +16,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Agregar platillo"
-                android:textSize="16dp"
-                android:id="@+id/radioBtnAgregarP"
-                android:layout_below="@+id/radioButton3"
-                android:layout_centerHorizontal="true"
-                android:checked="false"
-                />
             <Button
                 android:id="@+id/btnAceptar"
                 android:layout_width="100dp"
@@ -73,6 +63,7 @@
 
             <EditText
                 style="@style/Widget.AppCompat.AutoCompleteTextView"
+                android:id="@+id/txtNombreP"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nombre del platillo"
@@ -81,6 +72,7 @@
 
             <EditText
                 style="@style/Widget.AppCompat.AutoCompleteTextView"
+                android:id="@+id/txtTipoP"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -91,6 +83,7 @@
 
             <EditText
                 style="@style/Widget.AppCompat.AutoCompleteTextView"
+                android:id="@+id/txtPrecio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -101,6 +94,7 @@
 
             <EditText
                 style="@style/Widget.AppCompat.AutoCompleteTextView"
+                android:id="@+id/txtDescP"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
