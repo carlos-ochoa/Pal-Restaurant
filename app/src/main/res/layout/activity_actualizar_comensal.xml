@@ -17,9 +17,10 @@
             android:orientation="vertical">
     <ImageView
         android:layout_width="120dp"
+        android:id="@+id/Foto"
         android:layout_height="160dp"
         android:layout_gravity="center"
-        android:contentDescription="@string/usuario"
+        android:contentDescription="usuario"
         android:src="@drawable/icono_usuario" />
 
     <Button
