@@ -100,10 +100,10 @@ public class perfilRestaurante extends AppCompatActivity {
 
     }
 
-    private void BorrarWebService(String TVNombreRest, String TVNombre_Usuario) {
+    private void BorrarWebService(String Nombre_Restaurante, String Nombre_Usuario) {
         HashMap<String,String> hashMapToken = new HashMap<>();
-        hashMapToken.put("Nombre", TVNombreRest);
-        hashMapToken.put("Nombre_Usuario", TVNombre_Usuario);
+        hashMapToken.put("Nombre_Restaurante", Nombre_Restaurante);
+        hashMapToken.put("Nombre_Usuario", Nombre_Usuario);
 
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_BORRCOM, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){
