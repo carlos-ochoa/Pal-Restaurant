@@ -264,7 +264,7 @@ public class ActualizarComensal extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(ActualizarComensal.this, "No se pudo actualizar", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActualizarComensal.this, "No se pudo actualizar brother", Toast.LENGTH_SHORT).show();
             }
         });
         VolleyRP.addToQueue(solicitud, mRequest, this, volley);

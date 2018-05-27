@@ -51,6 +51,8 @@ public class Subir_Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subir__menu);
 
+        //String nombreRestaurante = getIntent().getStringExtra("nombreUsuario");
+
         volley = VolleyRP.getInstance(this);
         mRequest = volley.getRequestQueue();
 
@@ -58,7 +60,7 @@ public class Subir_Menu extends AppCompatActivity {
         tipo = (EditText) findViewById(R.id.txtTipoP);
         precio = (EditText) findViewById(R.id.txtPrecio);
         desc = (EditText) findViewById(R.id.txtDescP);
-        registrar = (Button) findViewById(R.id.btnCrear1);
+        registrar = (Button) findViewById(R.id.btnAceptar);
 
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -28,9 +28,7 @@ public class perfilRestaurante extends AppCompatActivity {
 
     private static final String IP_BORRCOM = "http://pruebagamash.esy.es/archPHP/Eliminar_Rest_2.php";
 
-   // String nombreRestaurante = getIntent().getStringExtra("nombreUsuario");
-
-    Button btnEliminar, btnActualizar;
+    Button btnEliminar, btnActualizar, btnCrear;
     private VolleyRP volley;
     private RequestQueue mRequest;
     TextView TVNombreRest, TVNombre_Usuario;
@@ -41,33 +39,54 @@ public class perfilRestaurante extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_restaurante2);
 
-        //btnActualizar  = findViewById(R.id.btnActu);
+        final String nombreRestaurante = getIntent().getStringExtra("nombreUsuario");
+
+        btnActualizar  = findViewById(R.id.btnActu);
         btnEliminar = findViewById(R.id.btnEliminar);
         TVNombreRest = findViewById(R.id.TVNombreRest);
         TVNombre_Usuario = findViewById(R.id.TVNombreRest);
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
-       /* RecyclerView rv = (RecyclerView)findViewById(R.id.rv);
+        /*RecyclerView rv = (RecyclerView)findViewById(R.id.rv);
         rv.setHasFixedSize(true);
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);*/
 
-       /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+       /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabRes);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                        //.setAction("Action", null).show();
                         Intent i = new Intent(perfilRestaurante.this,Subir_Menu.class);
-                        i.putExtra("nombreRest",nombreRestaurante);
+                        //i.putExtra("nombreRest",nombreRestaurante);
                         startActivity(i);
             }
         });*/
 
+        FloatingActionButton fab = findViewById(R.id.fabRes);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                        Intent i = new Intent(perfilRestaurante.this,Subir_Menu.class);
+                        //i.putExtra("nombreRest",nombreRestaurante);
+                        startActivity(i);
+            }
+        });
+
         volley = VolleyRP.getInstance(this);
         mRequest = volley.getRequestQueue();
+
+        /*btnCrear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentReg = new Intent(perfilRestaurante.this, Subir_Menu.class);
+                perfilRestaurante.this.startActivity(intentReg);
+
+            }
+        });*/
 
         btnEliminar.setOnClickListener(new View.OnClickListener() {
             @Override

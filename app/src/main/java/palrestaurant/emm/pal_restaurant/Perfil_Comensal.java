@@ -98,7 +98,7 @@ public class Perfil_Comensal extends AppCompatActivity {
                         Toast.makeText(Perfil_Comensal.this, "No se pudo borrar al usuario bro", Toast.LENGTH_SHORT).show();
                     }
                 });
-                VolleyRP.addToQueue(solicitud, mRequest, Perfil_Comensal.this, volley);
+                VolleyRP.addToQueue(solicitud, mRequest, this, volley);
 
             }
  }
