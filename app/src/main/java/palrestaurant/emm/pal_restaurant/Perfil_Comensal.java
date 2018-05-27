@@ -95,7 +95,7 @@ public class Perfil_Comensal extends AppCompatActivity {
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(Perfil_Comensal.this, "No se pudo borrar al usuario bro", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Perfil_Comensal.this, "Error inesperado en la conexion", Toast.LENGTH_SHORT).show();
                     }
                 });
                 VolleyRP.addToQueue(solicitud, mRequest, this, volley);
