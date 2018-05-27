@@ -28,9 +28,9 @@ public class perfilRestaurante extends AppCompatActivity {
 
     private static final String IP_BORRCOM = "http://pruebagamash.esy.es/archPHP/Eliminar_Rest_2.php";
 
-    String nombreRestaurante = getIntent().getStringExtra("nombreUsuario");
+   // String nombreRestaurante = getIntent().getStringExtra("nombreUsuario");
 
-    Button btnEliminar;
+    Button btnEliminar, btnActualizar;
     private VolleyRP volley;
     private RequestQueue mRequest;
     TextView TVNombreRest, TVNombre_Usuario;
@@ -39,21 +39,22 @@ public class perfilRestaurante extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perfil_restaurante);
+        setContentView(R.layout.activity_perfil_restaurante2);
 
+        //btnActualizar  = findViewById(R.id.btnActu);
         btnEliminar = findViewById(R.id.btnEliminar);
         TVNombreRest = findViewById(R.id.TVNombreRest);
         TVNombre_Usuario = findViewById(R.id.TVNombreRest);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
-        RecyclerView rv = (RecyclerView)findViewById(R.id.rv);
+       /* RecyclerView rv = (RecyclerView)findViewById(R.id.rv);
         rv.setHasFixedSize(true);
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
-        rv.setLayoutManager(llm);
+        rv.setLayoutManager(llm);*/
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+       /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,7 +64,7 @@ public class perfilRestaurante extends AppCompatActivity {
                         i.putExtra("nombreRest",nombreRestaurante);
                         startActivity(i);
             }
-        });
+        });*/
 
         volley = VolleyRP.getInstance(this);
         mRequest = volley.getRequestQueue();

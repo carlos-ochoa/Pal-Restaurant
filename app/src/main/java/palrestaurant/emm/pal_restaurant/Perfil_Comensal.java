@@ -37,6 +37,7 @@ public class Perfil_Comensal extends AppCompatActivity {
 
         volley = VolleyRP.getInstance(this);
         mRequest = volley.getRequestQueue();
+
         btnBuscar = (Button)findViewById(R.id.btnBuscar);
         btnCambiar = (Button)findViewById(R.id.btnCambiar);
         btnEliminar = (Button)findViewById(R.id.btnEliminar);
@@ -59,8 +60,8 @@ public class Perfil_Comensal extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(Perfil_Comensal.this, "Se intenta acceder al cambio", Toast.LENGTH_SHORT).show();
-                //Intent intentReg = new Intent(Perfil_Comensal.this, ActualizarComensal.class); //"Llamamos" al registro desde el main
-                //Perfil_Comensal.this.startActivity(intentReg);  //Comenzar la actividad del registro
+                Intent intentReg = new Intent(Perfil_Comensal.this, ActualizarComensal.class); //"Llamamos" al registro desde el main
+                Perfil_Comensal.this.startActivity(intentReg);  //Comenzar la actividad del registro
             }
         });
 
@@ -69,7 +70,8 @@ public class Perfil_Comensal extends AppCompatActivity {
             public void onClick(View v) {
                 BorrarWebService(TVNombre.getText().toString(),TVNombre_Usuario.getText().toString());
             }
-
+         });
+}
             private void BorrarWebService(String TVNombre, String TVNombre_Usuario) {
                 HashMap<String,String> hashMapToken = new HashMap<>();
                 hashMapToken.put("Nombre_Usuario", TVNombre_Usuario);
@@ -99,8 +101,4 @@ public class Perfil_Comensal extends AppCompatActivity {
                 VolleyRP.addToQueue(solicitud, mRequest, Perfil_Comensal.this, volley);
 
             }
-        });
-
-    }
-
-}
+ }
