@@ -53,6 +53,7 @@ public class ActualizarComensal extends AppCompatActivity {
     private final int MY_PERMISSIONS = 100;
     private final int PHOTO_CODE = 200;
     private final int SELECT_PICTURE = 300;
+   // private static  String id_Comens;
     private ImageView Foto;
     private RelativeLayout RLView;
     private  String mPath;
@@ -72,7 +73,7 @@ public class ActualizarComensal extends AppCompatActivity {
         Nombre_usuario = findViewById(R.id.EditT_Nombre_Usuario);
         ContActual = findViewById(R.id.EditT_Cont);
         contNueva = findViewById(R.id.EditT_NuevaCont);
-
+       // id_Comens=String.valueOf(R.id.);
         Foto = (ImageView) findViewById(R.id.Foto);
         btnCambiarFoto = (Button) findViewById(R.id.btnFoto);
 
@@ -85,7 +86,7 @@ public class ActualizarComensal extends AppCompatActivity {
         btnAct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActualizarWebService(Nombre.getText().toString(),Nombre_usuario.getText().toString(),ContActual.getText().toString(), contNueva.getText().toString());
+                ActualizarWebService(Nombre_usuario.getText().toString(), contNueva.getText().toString(),"1", ContActual.getText().toString() , Nombre.getText().toString());
             }
         });
 
@@ -239,12 +240,14 @@ public class ActualizarComensal extends AppCompatActivity {
     }
 
 
-    private void ActualizarWebService(String Nombre_usuario, String Nombre, String Contraseña, String ContraseñaNueva) {
+    private void ActualizarWebService(String nombre_usuario, String NuevaContraseña, String id_usuario,  String contraseña, String nombre) {
         HashMap<String,String> hashMapToken = new HashMap<>();
-        hashMapToken.put("Nombre_Usuario", Nombre_usuario);
-        hashMapToken.put("Nombre", Nombre);
-        hashMapToken.put("Contrasena", Contraseña);
-        hashMapToken.put("ContraseñaNueva", ContraseñaNueva);
+        hashMapToken.put("nombre_usuario", nombre_usuario);
+        hashMapToken.put("NuevaContraseña", NuevaContraseña);
+        hashMapToken.put("id_usuario", id_usuario);
+        hashMapToken.put("contrasena", contraseña);
+        hashMapToken.put("nombre", nombre);
+
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_ACTCOM, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){
             @Override

@@ -72,10 +72,10 @@ public class Perfil_Comensal extends AppCompatActivity {
             }
          });
 }
-            private void BorrarWebService(String TVNombre, String TVNombre_Usuario) {
+            private void BorrarWebService(String Nombre, String Nombre_Usuario) {
                 HashMap<String,String> hashMapToken = new HashMap<>();
-                hashMapToken.put("Nombre_Usuario", TVNombre_Usuario);
-                hashMapToken.put("Nombre", TVNombre);
+                hashMapToken.put("Nombre_Usuario", Nombre_Usuario);
+                hashMapToken.put("Nombre", Nombre);
 
                 JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_BORRCOM, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){
                     @Override
