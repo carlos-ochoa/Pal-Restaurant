@@ -77,7 +77,7 @@ public class Registrar_Comensal extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(Registrar_Comensal.this, "No se pudo registrar", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Registrar_Comensal.this, "Error inesperado", Toast.LENGTH_SHORT).show();
             }
         });
         VolleyRP.addToQueue(solicitud, mRequest, this, volley);

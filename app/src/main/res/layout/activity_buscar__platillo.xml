@@ -128,7 +128,7 @@
             </Spinner>
 
             <Button
-                android:id="@+id/btnBorrarPlatillo"
+                android:id="@+id/btnBuscar"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

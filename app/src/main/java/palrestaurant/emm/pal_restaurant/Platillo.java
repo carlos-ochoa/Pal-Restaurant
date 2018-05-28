@@ -5,20 +5,19 @@ public class Platillo {
     private int photoId;
     private String nombre;
     private String tipo;
-    private int precio;
+    private String precio;
     private String descripcion;
     private int id_restaurante;
 
-    public Platillo(int id, String nombre, String tipo, int precio, String descripcion, int id_restaurante){
-        this.id = id;
+    public Platillo(String nombre, String precio, String descripcion){
         this.nombre = nombre;
-        this.tipo = tipo;
+        //this.tipo = tipo;
         this.precio= precio;
         this.descripcion = descripcion;
-        this.id_restaurante = id_restaurante;
+        //this.id_restaurante = id_restaurante;
     }
 
-    public void actualizarPlatillo(int id, String nombre, String tipo, int precio, String descripcion, int id_restaurante){
+    public void actualizarPlatillo(int id, String nombre, String tipo, String precio, String descripcion, int id_restaurante){
         this.id = id;
         this.nombre = nombre;
         this.tipo = tipo;
@@ -31,28 +30,32 @@ public class Platillo {
         //TODO here
     }
 
-    public String getNombre(){
-        return nombre;
-    }
-
-    public int getId(){
+    public int getId() {
         return id;
     }
 
-    public int getPhotoId(){
+    public int getPhotoId() {
         return photoId;
     }
 
-    public int getPrecio(){
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public String getPrecio() {
         return precio;
     }
 
-    public String getDescripcion(){
+    public String getDescripcion() {
         return descripcion;
     }
 
-    public String getTipo(){
-        return tipo;
+    public int getId_restaurante() {
+        return id_restaurante;
     }
 }
 

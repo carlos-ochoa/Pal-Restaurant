@@ -3,10 +3,10 @@
     package="palrestaurant.emm.pal_restaurant">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.intent.action.MEDIA_MOUNTED"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.intent.action.MEDIA_MOUNTED" />
 
     <application
         android:allowBackup="true"
@@ -34,7 +34,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Perfil_Comensal" />
         <activity android:name=".Buscar_Platillo" />
-        <activity android:name=".ActualizarComensal"></activity>
+        <activity android:name=".ActualizarComensal" />
+        <activity android:name=".presentarResultados"></activity>
     </application>
 
 </manifest>
