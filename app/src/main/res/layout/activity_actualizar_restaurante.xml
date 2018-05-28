@@ -133,23 +133,6 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="384dp" />
 
-    <TextView
-        android:id="@+id/textviewTenedores"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Numero de tenedores"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="355dp" />
-
-    <EditText
-        android:id="@+id/ET_No_Tenedores"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="384dp" />
-
     <Button
         android:id="@+id/BtnAct"
         android:layout_width="match_parent"

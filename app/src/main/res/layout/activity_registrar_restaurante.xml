@@ -113,11 +113,13 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="384dp" />
 
+
     <Button
         android:id="@+id/btnCrear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
+        android:layout_marginTop="7dp"
         android:text="Crear cuenta "
         android:textColor="@android:color/background_light"
         tools:layout_editor_absoluteX="220dp"
