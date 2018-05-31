@@ -6,11 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class Buscar_Platillo extends AppCompatActivity {
 
     Button buscar;
+    TextView plat;
+    RadioButton gourmet, especialidad, familiar, buffet, comida_rapida;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +23,14 @@ public class Buscar_Platillo extends AppCompatActivity {
         setContentView(R.layout.activity_buscar__platillo);
 
         buscar = findViewById(R.id.btnBuscar);
+        plat = findViewById(R.id.txtPlatillo);
+        gourmet = findViewById(R.id.radioBtnGourmet);
+        especialidad = findViewById(R.id.radioBtnEsp);
+        familiar = findViewById(R.id.radioBtnFam);
+        buffet = findViewById(R.id.radioBtnBuf);
+        comida_rapida = findViewById(R.id.radioBtnRap);
+
+
 
         Spinner mySpinner = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<String> Adaptador = new ArrayAdapter<String>(Buscar_Platillo.this,
@@ -28,8 +41,15 @@ public class Buscar_Platillo extends AppCompatActivity {
         buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String platillo = "";
+                if(gourmet.isChecked()) platillo = "Gourmet";
+                else if(especialidad.isChecked()) platillo = "Especialidad";
+                else if(familiar.isChecked()) platillo = "Familiar";
+                else if(buffet.isChecked()) platillo = "Buffet";
+                else if(comida_rapida.isChecked()) platillo = "Comida rápida";
+                Toast.makeText(Buscar_Platillo.this, platillo, Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Buscar_Platillo.this,presentarResultados.class);
-                //i.putExtra("nombreUsuario",usuario);
+                i.putExtra("platilloTexto",platillo);
                 startActivity(i);
             }
         });
