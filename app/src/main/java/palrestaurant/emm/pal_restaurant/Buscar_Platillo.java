@@ -32,7 +32,7 @@ public class Buscar_Platillo extends AppCompatActivity {
 
 
 
-        Spinner mySpinner = (Spinner) findViewById(R.id.spinner);
+        final Spinner mySpinner = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<String> Adaptador = new ArrayAdapter<String>(Buscar_Platillo.this,
                 android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.precios));
                 Adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -42,6 +42,10 @@ public class Buscar_Platillo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String platillo = "";
+                String nombre = "";
+                
+                int men = 0, may = 0;
+                nombre = plat.getText().toString();
                 if(gourmet.isChecked()) platillo = "Gourmet";
                 else if(especialidad.isChecked()) platillo = "Especialidad";
                 else if(familiar.isChecked()) platillo = "Familiar";
@@ -50,6 +54,7 @@ public class Buscar_Platillo extends AppCompatActivity {
                 Toast.makeText(Buscar_Platillo.this, platillo, Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Buscar_Platillo.this,presentarResultados.class);
                 i.putExtra("platilloTexto",platillo);
+                i.putExtra("platilloNombre",nombre);
                 startActivity(i);
             }
         });

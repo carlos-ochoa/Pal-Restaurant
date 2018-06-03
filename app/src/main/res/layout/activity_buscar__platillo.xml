@@ -24,22 +24,13 @@
                 android:text="Selecciona y escribe los filtros de búsqueda"
                 android:textSize="16dp" />
 
-            <Switch
-                android:id="@+id/SZonaFuma"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="13dp"
-                android:layout_marginTop="13dp"
-                android:textSize="15dp"
-                android:text="Zona de fumadores                               " />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:textColor="#000000"
-                android:text="Elija el tipo de comida"
+                android:text="Elija el tipo de restaurante"
                 android:textSize="16dp" />
 
 

@@ -28,7 +28,7 @@ public class perfilRestaurante extends AppCompatActivity {
 
     private static final String IP_BORRCOM = "http://pruebagamash.esy.es/archPHP/Eliminar_Rest_2.php";
 
-    Button btnEliminar, btnActualizar, btnCrear;
+    Button btnEliminar, btnActualizar, btnCrear, btnLeer;
     private VolleyRP volley;
     private RequestQueue mRequest;
     TextView TVNombreRest, TVNombre_Usuario;
@@ -41,6 +41,7 @@ public class perfilRestaurante extends AppCompatActivity {
 
         final String nombreRestaurante = getIntent().getStringExtra("nombreUsuario");
 
+        btnLeer = findViewById(R.id.btnQR);
         btnActualizar  = findViewById(R.id.btnActu);
         btnEliminar = findViewById(R.id.btnEliminar);
         TVNombreRest = findViewById(R.id.TVNombreRest);
@@ -87,6 +88,16 @@ public class perfilRestaurante extends AppCompatActivity {
 
             }
         });*/
+
+        btnLeer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(perfilRestaurante.this,leerQR.class);
+                //i.putExtra("nombreRest",nombreRestaurante);
+                startActivity(i);
+
+            }
+        });
 
         btnEliminar.setOnClickListener(new View.OnClickListener() {
             @Override

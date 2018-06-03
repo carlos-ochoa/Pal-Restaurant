@@ -1,6 +1,7 @@
 package palrestaurant.emm.pal_restaurant;
 
 import android.content.Context;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.view.View;
@@ -52,6 +53,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.PlatilloViewHolder> {
     class PlatilloViewHolder extends RecyclerView.ViewHolder{
         TextView nombre,precio,descripcion;
         ImageView foto;
+        Button ver;
         public PlatilloViewHolder(View itemView){
             super(itemView);
             //Enlace a los widgets

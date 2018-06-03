@@ -12,11 +12,11 @@
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="8dp">
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="174dp"
-                android:background="@android:color/holo_orange_light" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="129dp"
+        android:background="@android:color/holo_orange_light" />
 
             <TextView
                 android:id="@+id/TVNombreRest"
@@ -40,24 +40,33 @@
                 android:gravity="center"
                 android:text="@string/direccion" />
 
-            <Button
-                android:id="@+id/btnActu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?android:attr/colorPressedHighlight"
-                android:text="Actualizar información" />
+    <Button
+        android:id="@+id/btnQR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_light"
+        android:text="Leer código QR"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnActu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/colorPressedHighlight"
+        android:text="Actualizar información"
+        android:textColor="@android:color/white" />
 
 
-            <Button
-                android:id="@+id/btnEliminar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:background="#ff0000"
-                android:text="Eliminar cuenta"
-                android:textColor="#FFFFFF"
-                android:textSize="17sp" />
+    <Button
+        android:id="@+id/btnEliminar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="#ff0000"
+        android:text="Eliminar cuenta"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp" />
 
 
 
@@ -74,6 +83,11 @@
         android:backgroundTint="@android:color/holo_orange_dark"
         android:src="@android:drawable/ic_menu_add" />-->
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="170dp" />
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabRes"
         android:layout_width="wrap_content"
@@ -83,12 +97,6 @@
         android:src="@android:drawable/ic_menu_add"
         app:backgroundTint="@android:color/holo_orange_dark" />
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/rv"
-        />
 
-
-        </LinearLayout>
+</LinearLayout>
 
