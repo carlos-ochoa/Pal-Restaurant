@@ -42,10 +42,9 @@ public class Buscar_Platillo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String platillo = "";
-                String nombre = "";
-                
-                int men = 0, may = 0;
-                nombre = plat.getText().toString();
+                String nombre = "El yacote";
+                String precio = "", may = "";
+                //if(!plat.getText().toString().equals(""))nombre = plat.getText().toString();
                 if(gourmet.isChecked()) platillo = "Gourmet";
                 else if(especialidad.isChecked()) platillo = "Especialidad";
                 else if(familiar.isChecked()) platillo = "Familiar";

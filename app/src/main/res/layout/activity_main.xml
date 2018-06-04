@@ -9,11 +9,11 @@
 
     <ImageView
         android:layout_width="242dp"
-        android:layout_height="337dp"
+        android:layout_height="286dp"
         android:layout_gravity="center"
         android:layout_marginTop="1dp"
         android:contentDescription="@string/usuario"
-        android:src="@drawable/Norwegian" />
+        android:src="@drawable/norwegian" />
 
     <EditText
         android:id="@+id/EditT_Nombre_Usuario"
