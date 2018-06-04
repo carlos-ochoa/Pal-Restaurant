@@ -85,6 +85,7 @@ public class presentarResultados extends AppCompatActivity {
                     }
                     Adapter adapter = new Adapter(presentarResultados.this, platillos);
                     recyclerView.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -116,6 +117,7 @@ public class presentarResultados extends AppCompatActivity {
                     }
                     Adapter adapter = new Adapter(presentarResultados.this, platillos);
                     recyclerView.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -147,6 +149,7 @@ public class presentarResultados extends AppCompatActivity {
                     }
                     Adapter adapter = new Adapter(presentarResultados.this, platillos);
                     recyclerView.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

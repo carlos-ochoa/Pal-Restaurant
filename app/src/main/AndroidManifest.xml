@@ -36,7 +36,8 @@
         <activity android:name=".Buscar_Platillo" />
         <activity android:name=".ActualizarComensal" />
         <activity android:name=".presentarResultados" />
-        <activity android:name=".leerQR"></activity>
+        <activity android:name=".leerQR" />
+        <activity android:name=".activity_resenas"></activity>
     </application>
 
 </manifest>
