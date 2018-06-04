@@ -65,7 +65,7 @@ public class activity_actualizar_restaurante extends AppCompatActivity {
         hashMapToken.put("Telefono", Telefono);
         hashMapToken.put("Sitio_Web", Sitio_Web);
         hashMapToken.put("Descripcion", Descripcion);
-
+        //Generar la solicitud del JSON
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_ACTREST, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){
             @Override
             public void onResponse(JSONObject datos) {
