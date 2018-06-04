@@ -23,7 +23,15 @@ import java.util.List;
 
 public class presentarResultados extends AppCompatActivity {
 
-    private static final String IP = "http://pruebagamash.esy.es/archPHP/cp2.php?Tipo_Platillo=";
+    private static final String IP0 = "http://pruebagamash.esy.es/archPHP/cp2.php?Tipo_Platillo=";
+    private static final String IP1 = "http://pruebagamash.esy.es/archPHP/cp3.php?Nombre_Platillo=";
+    private static final String IP2 = "http://pruebagamash.esy.es/archPHP/cp4.php?Tipo_Platillo=";
+    private static final String IP3 = "http://pruebagamash.esy.es/archPHP/cp5.php?Tipo_Platillo=";
+    private static final String IP4 = "http://pruebagamash.esy.es/archPHP/cp6.php?Tipo_Platillo=";
+    private static final String IP5 = "http://pruebagamash.esy.es/archPHP/cp7.php?Tipo_Platillo=";
+    private static final String IP6 = "http://pruebagamash.esy.es/archPHP/cp8.php?Tipo_Platillo=";
+    private static final String dos = "&Nombre_Platillo=";
+    private String IP;
 
     List<Platillo> platillos;
 
@@ -42,9 +50,22 @@ public class presentarResultados extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         platillos = new ArrayList<>();
-        Toast.makeText(presentarResultados.this, nombrePlatillo, Toast.LENGTH_SHORT).show();
-        cargarPlatillos(IP+nombrePlatillo);
-        cargarPlatillos2(IP+nPlatillo);
+
+        if(!nombrePlatillo.equals("")){
+            cargarPlatillos(IP0+nombrePlatillo);
+        }
+        else if(nPlatillo.length() > 0){
+            Toast.makeText(presentarResultados.this, nPlatillo, Toast.LENGTH_SHORT).show();
+            cargarPlatillos2(IP1+nPlatillo);
+        }
+        /*else if(!nombrePlatillo.equals("")){
+            IP = IP2;
+            cargarPlatillos(IP+nombrePlatillo);
+        }*/
+        else if(!nombrePlatillo.equals("") && !nombrePlatillo.equals("")){
+            IP = IP3;
+            cargarPlatillos3(IP+nombrePlatillo+dos+nPlatillo);
+        }
     }
 
     private void cargarPlatillos(String URL){
@@ -79,6 +100,37 @@ public class presentarResultados extends AppCompatActivity {
     }
 
     private void cargarPlatillos2(String URL){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    Toast.makeText(presentarResultados.this, "CARGANDO...", Toast.LENGTH_SHORT).show();
+                    JSONArray array = new JSONArray(response);
+                    for (int i = 0; i < array.length(); i++) {
+                        JSONObject platillo = array.getJSONObject(i);
+                        platillos.add(new Platillo(
+                                platillo.getString("Nombre_Platillo"),
+                                //platillo.getString("Tipo_Platillo"),
+                                platillo.getString("Precio"),
+                                platillo.getString("Descripcion_Platillo")));
+                    }
+                    Adapter adapter = new Adapter(presentarResultados.this, platillos);
+                    recyclerView.setAdapter(adapter);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(presentarResultados.this, "Error de conexion", Toast.LENGTH_SHORT).show();
+                    }
+                });
+        Volley.newRequestQueue(this).add(stringRequest);
+    }
+
+    private void cargarPlatillos3(String URL){
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
