@@ -32,7 +32,8 @@ public class presentarResultados extends AppCompatActivity {
     private static final String IP6 = "http://pruebagamash.esy.es/archPHP/cp8.php?Tipo_Platillo=";
     private static final String dos = "&Nombre_Platillo=";
     private String IP;
-    final String nombreRestaurante = getIntent().getStringExtra("nombreUsuario");
+    private String rest;
+
 
     List<Platillo> platillos;
 
@@ -42,9 +43,11 @@ public class presentarResultados extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_presentar_resultados);
-
+        final String nombreRestaurante = getIntent().getStringExtra("nombreUsuario");
         final String nombrePlatillo = getIntent().getStringExtra("platilloTexto");
         final String nPlatillo = getIntent().getStringExtra("platilloNombre");
+
+        rest = nombreRestaurante;
 
         recyclerView = (RecyclerView)findViewById(R.id.rv);
         recyclerView.setHasFixedSize(true);
@@ -53,11 +56,11 @@ public class presentarResultados extends AppCompatActivity {
         platillos = new ArrayList<>();
 
         if(!nombrePlatillo.equals("")){
-            cargarPlatillos(IP0+nombrePlatillo);
+            cargarPlatillos(IP0+nombrePlatillo, rest);
         }
         else if(nPlatillo.length() > 0){
             Toast.makeText(presentarResultados.this, nPlatillo, Toast.LENGTH_SHORT).show();
-            cargarPlatillos2(IP1+nPlatillo);
+            cargarPlatillos2(IP1+nPlatillo, rest);
         }
         /*else if(!nombrePlatillo.equals("")){
             IP = IP2;
@@ -65,11 +68,11 @@ public class presentarResultados extends AppCompatActivity {
         }*/
         else if(!nombrePlatillo.equals("") && !nombrePlatillo.equals("")){
             IP = IP3;
-            cargarPlatillos3(IP+nombrePlatillo+dos+nPlatillo);
+            cargarPlatillos3(IP+nombrePlatillo+dos+nPlatillo, rest);
         }
     }
 
-    private void cargarPlatillos(String URL){
+    private void cargarPlatillos(String URL, final String resta){
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -84,7 +87,7 @@ public class presentarResultados extends AppCompatActivity {
                                 platillo.getString("Precio"),
                                 platillo.getString("Descripcion_Platillo")));
                     }
-                    Adapter adapter = new Adapter(presentarResultados.this, platillos, nombreRestaurante);
+                    Adapter adapter = new Adapter(presentarResultados.this, platillos, resta);
                     recyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
                 } catch (JSONException e) {
@@ -101,7 +104,7 @@ public class presentarResultados extends AppCompatActivity {
         Volley.newRequestQueue(this).add(stringRequest);
     }
 
-    private void cargarPlatillos2(String URL){
+    private void cargarPlatillos2(String URL, final String resta){
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -116,7 +119,7 @@ public class presentarResultados extends AppCompatActivity {
                                 platillo.getString("Precio"),
                                 platillo.getString("Descripcion_Platillo")));
                     }
-                    Adapter adapter = new Adapter(presentarResultados.this, platillos, nombreRestaurante);
+                    Adapter adapter = new Adapter(presentarResultados.this, platillos, resta);
                     recyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
                 } catch (JSONException e) {
@@ -133,7 +136,7 @@ public class presentarResultados extends AppCompatActivity {
         Volley.newRequestQueue(this).add(stringRequest);
     }
 
-    private void cargarPlatillos3(String URL){
+    private void cargarPlatillos3(String URL, final String resta){
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -148,7 +151,7 @@ public class presentarResultados extends AppCompatActivity {
                                 platillo.getString("Precio"),
                                 platillo.getString("Descripcion_Platillo")));
                     }
-                    Adapter adapter = new Adapter(presentarResultados.this, platillos, nombreRestaurante);
+                    Adapter adapter = new Adapter(presentarResultados.this, platillos, resta);
                     recyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
                 } catch (JSONException e) {

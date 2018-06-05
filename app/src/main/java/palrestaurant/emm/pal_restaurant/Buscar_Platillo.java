@@ -22,6 +22,8 @@ public class Buscar_Platillo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buscar__platillo);
 
+        final String nombreRestaurante = getIntent().getStringExtra("nombreUsuario");
+
         buscar = findViewById(R.id.btnBuscar);
         plat = findViewById(R.id.txtPlatillo);
         gourmet = findViewById(R.id.radioBtnGourmet);
@@ -52,6 +54,7 @@ public class Buscar_Platillo extends AppCompatActivity {
                 else if(comida_rapida.isChecked()) platillo = "Comida rápida";
                 Toast.makeText(Buscar_Platillo.this, platillo, Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Buscar_Platillo.this,presentarResultados.class);
+                i.putExtra("nombreUsuario",nombreRestaurante);
                 i.putExtra("platilloTexto",platillo);
                 i.putExtra("platilloNombre",nombre);
                 startActivity(i);
