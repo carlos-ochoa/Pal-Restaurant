@@ -41,7 +41,8 @@
         <activity android:name=".Reservar_lugar" />
         <activity android:name=".Reservaciones_Comensal" />
         <activity android:name=".Reservaciones_Restaurante" />
-        <activity android:name=".perfilRestauranteComensal"></activity>
+        <activity android:name=".perfilRestauranteComensal" />
+        <activity android:name=".verQR"></activity>
     </application>
 
 </manifest>
