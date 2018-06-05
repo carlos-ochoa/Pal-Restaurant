@@ -33,7 +33,7 @@ public class Perfil_Comensal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil__comensal);
 
-        String nombreUsuario = getIntent().getStringExtra("nombreUsuario");
+        final String nombreUsuario = getIntent().getStringExtra("nombreUsuario");
 
         volley = VolleyRP.getInstance(this);
         mRequest = volley.getRequestQueue();
@@ -51,6 +51,7 @@ public class Perfil_Comensal extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intentReg = new Intent(Perfil_Comensal.this, Buscar_Platillo.class);
+                intentReg.putExtra("nombreUsuario",nombreUsuario);
                 Perfil_Comensal.this.startActivity(intentReg);
 
             }

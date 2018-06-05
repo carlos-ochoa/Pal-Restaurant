@@ -1,11 +1,13 @@
 package palrestaurant.emm.pal_restaurant;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -13,6 +15,11 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,14 +31,18 @@ public class Reservar_lugar extends AppCompatActivity {
     private static final String IP_RESERVAR = "http://pruebagamash.esy.es/archPHP/Reservar_INSERT.php";
     Button btnAceptar, btnCancelar;
     EditText et_hora, et_mesa, et_fecha;
+    ImageView codigo;
     private VolleyRP volley;
     private RequestQueue mRequest;
+    private String hora, fecha, mesa;
+    private String data2QR;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservar_lugar);
 
+        codigo = (ImageView) findViewById(R.id.codigo);
         btnAceptar = findViewById(R.id.btnAceptar);
         btnCancelar = findViewById(R.id.btnCancelar);
         et_hora = findViewById(R.id.etHora);
@@ -43,8 +54,21 @@ public class Reservar_lugar extends AppCompatActivity {
         btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                reservarWebService(et_hora.getText().toString(),et_fecha.getText().toString(),et_mesa.getText().toString());
+                hora = et_hora.getText().toString();
+                fecha = et_fecha.getText().toString();
+                mesa = et_mesa.getText().toString();
+                reservarWebService(hora,fecha,mesa);
+                data2QR = hora + fecha + mesa;
+                Toast.makeText(Reservar_lugar.this,data2QR, Toast.LENGTH_SHORT).show();
+                MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+                try{
+                    BitMatrix bitMatrix = multiFormatWriter.encode(data2QR, BarcodeFormat.QR_CODE,200,200);
+                    BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+                    Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
+                    codigo.setImageBitmap(bitmap);
+                } catch (WriterException e){
+                    e.printStackTrace();
+                }
             }
         });
 
