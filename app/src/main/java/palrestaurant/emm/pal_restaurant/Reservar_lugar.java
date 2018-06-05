@@ -42,7 +42,7 @@ public class Reservar_lugar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservar_lugar);
 
-        codigo = (ImageView) findViewById(R.id.codigo);
+        codigo = (ImageView) findViewById(R.id.codigo2);
         btnAceptar = findViewById(R.id.btnAceptar);
         btnCancelar = findViewById(R.id.btnCancelar);
         et_hora = findViewById(R.id.etHora);
@@ -59,16 +59,9 @@ public class Reservar_lugar extends AppCompatActivity {
                 mesa = et_mesa.getText().toString();
                 reservarWebService(hora,fecha,mesa);
                 data2QR = hora + fecha + mesa;
-                Toast.makeText(Reservar_lugar.this,data2QR, Toast.LENGTH_SHORT).show();
-                MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
-                try{
-                    BitMatrix bitMatrix = multiFormatWriter.encode(data2QR, BarcodeFormat.QR_CODE,200,200);
-                    BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-                    Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
-                    codigo.setImageBitmap(bitmap);
-                } catch (WriterException e){
-                    e.printStackTrace();
-                }
+                Intent i = new Intent(Reservar_lugar.this, verQR.class);
+                i.putExtra("data2QR",data2QR);
+                startActivity(i);
             }
         });
 
