@@ -32,6 +32,7 @@ public class presentarResultados extends AppCompatActivity {
     private static final String IP6 = "http://pruebagamash.esy.es/archPHP/cp8.php?Tipo_Platillo=";
     private static final String dos = "&Nombre_Platillo=";
     private String IP;
+    final String nombreRestaurante = getIntent().getStringExtra("nombreUsuario");
 
     List<Platillo> platillos;
 
@@ -83,7 +84,7 @@ public class presentarResultados extends AppCompatActivity {
                                 platillo.getString("Precio"),
                                 platillo.getString("Descripcion_Platillo")));
                     }
-                    Adapter adapter = new Adapter(presentarResultados.this, platillos);
+                    Adapter adapter = new Adapter(presentarResultados.this, platillos, nombreRestaurante);
                     recyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
                 } catch (JSONException e) {
@@ -115,7 +116,7 @@ public class presentarResultados extends AppCompatActivity {
                                 platillo.getString("Precio"),
                                 platillo.getString("Descripcion_Platillo")));
                     }
-                    Adapter adapter = new Adapter(presentarResultados.this, platillos);
+                    Adapter adapter = new Adapter(presentarResultados.this, platillos, nombreRestaurante);
                     recyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
                 } catch (JSONException e) {
@@ -147,7 +148,7 @@ public class presentarResultados extends AppCompatActivity {
                                 platillo.getString("Precio"),
                                 platillo.getString("Descripcion_Platillo")));
                     }
-                    Adapter adapter = new Adapter(presentarResultados.this, platillos);
+                    Adapter adapter = new Adapter(presentarResultados.this, platillos, nombreRestaurante);
                     recyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
                 } catch (JSONException e) {

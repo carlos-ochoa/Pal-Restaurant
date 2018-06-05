@@ -58,4 +58,7 @@ public class Buscar_Platillo extends AppCompatActivity {
             }
         });
     }
+
+    //Definir método para obtener restaurante
+    
 }

@@ -16,15 +16,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.PlatilloViewHolder> {
     private String[] mDataset;
     private Context mCtx;
     private List<Platillo> platilloList;
+    private String restaurante;
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
 
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public Adapter(Context mCtx, List<Platillo> platilloList) {
+    public Adapter(Context mCtx, List<Platillo> platilloList, String restaurante) {
         this.mCtx = mCtx;
         this.platilloList = platilloList;
+        this.restaurante = restaurante;
     }
 
     // Create new views (invoked by the layout manager)
@@ -66,7 +68,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.PlatilloViewHolder> {
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(itemView.getContext(),perfilRestauranteComensal.class);
-                    //i.putExtra("nombreRest", restaurante);
+                    i.putExtra("nombreRest", restaurante);
                     itemView.getContext().startActivity(i);
                 }
             });
