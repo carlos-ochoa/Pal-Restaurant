@@ -46,6 +46,9 @@ public class perfilRestaurante extends AppCompatActivity {
         btnEliminar = findViewById(R.id.btnEliminar);
         TVNombreRest = findViewById(R.id.TVNombreRest);
         TVNombre_Usuario = findViewById(R.id.TVNombreRest);
+
+        TVNombreRest.setText(nombreRestaurante);
+        TVNombre_Usuario.setText(nombreRestaurante);
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
@@ -73,6 +76,7 @@ public class perfilRestaurante extends AppCompatActivity {
             public void onClick(View view) {
                         Intent i = new Intent(perfilRestaurante.this,Subir_Menu.class);
                         //i.putExtra("nombreRest",nombreRestaurante);
+                        i.putExtra("nombreUsuario", nombreRestaurante);
                         startActivity(i);
             }
         });

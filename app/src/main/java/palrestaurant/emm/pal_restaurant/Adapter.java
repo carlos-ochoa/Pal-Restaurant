@@ -1,6 +1,7 @@
 package palrestaurant.emm.pal_restaurant;
 
 import android.content.Context;
+import android.content.Intent;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ImageView;
@@ -53,14 +54,22 @@ public class Adapter extends RecyclerView.Adapter<Adapter.PlatilloViewHolder> {
     class PlatilloViewHolder extends RecyclerView.ViewHolder{
         TextView nombre,precio,descripcion;
         ImageView foto;
-        Button ver;
-        public PlatilloViewHolder(View itemView){
+        public PlatilloViewHolder(final View itemView){
             super(itemView);
             //Enlace a los widgets
             nombre = itemView.findViewById(R.id.nombre_platillo);
             precio = itemView.findViewById(R.id.precio_platillo);
             descripcion = itemView.findViewById(R.id.desc_platillo);
             foto = itemView.findViewById(R.id.platillo_photo);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(itemView.getContext(),perfilRestauranteComensal.class);
+                    //i.putExtra("nombreRest", restaurante);
+                    itemView.getContext().startActivity(i);
+                }
+            });
         }
     }
 }

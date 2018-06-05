@@ -48,13 +48,12 @@ public class Subir_Menu extends AppCompatActivity {
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 registrarWebService(nombre.getText().toString(),tipo.getText().toString(),precio.getText().toString(), desc.getText().toString(), restaurante);
             }
         });
     }
 
-    private void registrarWebService(String nombre,String tipo, String precio, String desc, String restaurante){
+    private void registrarWebService(String nombre, String tipo, String precio, String desc, final String restaurante){
         HashMap<String,String> hashMapToken = new HashMap<>();
         hashMapToken.put("Nombre_Platillo", nombre);
         hashMapToken.put("Tipo_Platillo", tipo);
@@ -68,7 +67,7 @@ public class Subir_Menu extends AppCompatActivity {
                 try {
                     String estado = datos.getString("resultado");
                     if (estado.equalsIgnoreCase("El platillo se registro correctamente")) {
-                        Toast.makeText(Subir_Menu.this, estado, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Subir_Menu.this, estado + restaurante, Toast.LENGTH_SHORT).show();
                         finish();
                         Intent intentReg = new Intent(Subir_Menu.this, perfilRestaurante.class); //"Llamamos" al registro desde el main
                         Subir_Menu.this.startActivity(intentReg);

@@ -109,7 +109,7 @@ public class presentarResultados extends AppCompatActivity {
                     JSONArray array = new JSONArray(response);
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject platillo = array.getJSONObject(i);
-                        platillos.add(new Platillo(
+                         platillos.add(new Platillo(
                                 platillo.getString("Nombre_Platillo"),
                                 //platillo.getString("Tipo_Platillo"),
                                 platillo.getString("Precio"),

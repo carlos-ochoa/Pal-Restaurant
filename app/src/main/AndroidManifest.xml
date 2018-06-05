@@ -40,7 +40,8 @@
         <activity android:name=".activity_resenas" />
         <activity android:name=".Ver_Reservaciones" />
         <activity android:name=".Reservaciones_Comensal" />
-        <activity android:name=".Reservaciones_Restaurante"></activity>
+        <activity android:name=".Reservaciones_Restaurante" />
+        <activity android:name=".perfilRestauranteComensal"></activity>
     </application>
 
 </manifest>

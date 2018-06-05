@@ -108,7 +108,7 @@ public class activity_registrar_restaurante extends AppCompatActivity{
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(activity_registrar_restaurante.this, "No se pudo registrar", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity_registrar_restaurante.this, "Error de conexion", Toast.LENGTH_SHORT).show();
             }
         });
         VolleyRP.addToQueue(solicitud, mRequest, this, volley);
