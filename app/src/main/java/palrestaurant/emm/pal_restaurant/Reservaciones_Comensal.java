@@ -68,7 +68,7 @@ public class Reservaciones_Comensal extends AppCompatActivity {
                                 platillo.getString("Precio"),
                                 platillo.getString("Descripcion_Platillo")));
                     }
-                    Adapter adapter = new Adapter(Reservaciones_Comensal.this, platillos);
+                    Adapter adapter = new Adapter(Reservaciones_Comensal.this, platillos,"Compaches");
                     recyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
                 } catch (JSONException e) {
