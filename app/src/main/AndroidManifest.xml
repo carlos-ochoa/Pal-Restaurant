@@ -37,7 +37,10 @@
         <activity android:name=".ActualizarComensal" />
         <activity android:name=".presentarResultados" />
         <activity android:name=".leerQR" />
-        <activity android:name=".activity_resenas"></activity>
+        <activity android:name=".activity_resenas" />
+        <activity android:name=".Ver_Reservaciones" />
+        <activity android:name=".Reservaciones_Comensal" />
+        <activity android:name=".Reservaciones_Restaurante"></activity>
     </application>
 
 </manifest>
