@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 public class perfilRestauranteComensal extends AppCompatActivity {
 
-    Button reserva, encuesta, resena;
-    TextView restaurante;
+    Button reserva, encuesta, resena, verResena;
+    TextView restaurante, direccion, descripcion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +24,12 @@ public class perfilRestauranteComensal extends AppCompatActivity {
         encuesta = (Button) findViewById(R.id.btnEncuesta);
         resena = (Button) findViewById(R.id.btnResena);
         restaurante = (TextView) findViewById(R.id.TVNombreRest);
-
-        restaurante.setText(nombreRestaurante);
+        direccion = (TextView) findViewById(R.id.textView4);
+        descripcion = (TextView) findViewById(R.id.textView3);
+        verResena= (Button) findViewById(R.id.button3);
+        restaurante.setText("Compaches");
+        direccion.setText("Av. Siempre viva, No.34 , Col. Iztapalapa");
+        restaurante.setText("Restaurante de 1 estrella");
 
         reserva.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +54,13 @@ public class perfilRestauranteComensal extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intentReg = new Intent(perfilRestauranteComensal.this, activity_resenas.class);
                 intentReg.putExtra("nRes",nombreRestaurante);
+                perfilRestauranteComensal.this.startActivity(intentReg);
+            }
+        });
+        verResena.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentReg = new Intent(perfilRestauranteComensal.this, presentarResultados_resenas.class);
                 perfilRestauranteComensal.this.startActivity(intentReg);
             }
         });

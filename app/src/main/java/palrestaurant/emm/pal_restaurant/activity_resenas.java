@@ -43,18 +43,16 @@ public class activity_resenas extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 insertar(idRestaurante, resena.getText().toString(),nombre_usuario);
+                Toast.makeText(activity_resenas.this, resena.getText().toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void insertar(String idRestaurante, String rese, String nombre_usuario)
     {
-        //Object restaurante= idRestaurante;
-        //Object resOb=rese;
-        //Object comensal= nombre_usuario;
         HashMap<String, String> hashMapToken = new HashMap<>();
         hashMapToken.put("ID_Rest", idRestaurante);
-        hashMapToken.put("Descripcion_Reseña",rese );
+        hashMapToken.put("Descripcion_Resena",rese );
         hashMapToken.put("Nombre_Usuario", nombre_usuario);
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_ACTREST, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){
