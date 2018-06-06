@@ -17,7 +17,9 @@ android {
         }
     }
 }
-
+repositories {
+    maven { url 'https://jitpack.io' }
+}
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
@@ -36,4 +38,5 @@ dependencies {
     implementation 'me.dm7.barcodescanner:zxing:1.8.4'
     implementation 'com.google.zxing:core:3.2.1'
     implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 }

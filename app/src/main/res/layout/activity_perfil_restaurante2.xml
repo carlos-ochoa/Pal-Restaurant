@@ -83,10 +83,16 @@
         android:backgroundTint="@android:color/holo_orange_dark"
         android:src="@android:drawable/ic_menu_add" />-->
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ver estadisticas" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
-        android:layout_height="170dp" />
+        android:layout_height="130dp" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabRes"
