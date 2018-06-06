@@ -60,7 +60,7 @@ public class Perfil_Comensal extends AppCompatActivity {
         btnCambiar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Perfil_Comensal.this, "Se intenta acceder al cambio", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Perfil_Comensal.this, "Se intenta acceder al cambio", Toast.LENGTH_SHORT).show();
                 Intent intentReg = new Intent(Perfil_Comensal.this, ActualizarComensal.class); //"Llamamos" al registro desde el main
                 Perfil_Comensal.this.startActivity(intentReg);  //Comenzar la actividad del registro
             }

@@ -12,6 +12,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.google.android.gms.common.util.Strings;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,7 +24,9 @@ public class activity_resenas extends AppCompatActivity {
     private static final String IP_ACTREST = "http://pruebagamash.esy.es/archPHP/insertar_resena_post.php";
     Button publicar;
     EditText resena;
-    int idRestaurante, idComensal;
+    String idRestaurante;
+    String nombre_usuario;
+
     private VolleyRP volley;
     private RequestQueue mRequest;
     @Override
@@ -34,23 +37,25 @@ public class activity_resenas extends AppCompatActivity {
         mRequest = volley.getRequestQueue();
         publicar = findViewById(R.id.btn);
         resena = findViewById(R.id.eT);
+        idRestaurante = "1";
+        nombre_usuario = "Joaks";
         publicar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertar(idRestaurante, resena.getText().toString(),idComensal);
+                insertar(idRestaurante, resena.getText().toString(),nombre_usuario);
             }
         });
     }
 
-    private void insertar(int idRestaurante, String rese, int idComensal)
+    private void insertar(String idRestaurante, String rese, String nombre_usuario)
     {
-        Object restaurante= idRestaurante;
-        Object resOb=rese;
-        Object comensal= idComensal;
-        HashMap<String,Object> hashMapToken = new HashMap<>();
-        hashMapToken.put("ID_Rest", restaurante);
-        hashMapToken.put("Descripcion_Reseña",resOb );
-        hashMapToken.put("ID_Comensal", comensal);
+        //Object restaurante= idRestaurante;
+        //Object resOb=rese;
+        //Object comensal= nombre_usuario;
+        HashMap<String, String> hashMapToken = new HashMap<>();
+        hashMapToken.put("ID_Rest", idRestaurante);
+        hashMapToken.put("Descripcion_Reseña",rese );
+        hashMapToken.put("Nombre_Usuario", nombre_usuario);
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_ACTREST, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){
             @Override
