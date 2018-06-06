@@ -16,6 +16,7 @@ public class Buscar_Platillo extends AppCompatActivity {
     Button buscar;
     TextView plat;
     RadioButton gourmet, especialidad, familiar, buffet, comida_rapida;
+    String nombreUsuario = getIntent().getStringExtra("nombreUsuario");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
