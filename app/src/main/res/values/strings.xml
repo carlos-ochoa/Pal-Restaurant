@@ -8,6 +8,13 @@
         <item>Más de 1000 pesos</item>
     </string-array>
 
+    <string-array name="perfiles">
+        <item>Saludable</item>
+        <item>Sin restricciones</item>
+        <item>Vegano</item>
+        <item>Light</item>
+    </string-array>
+
     <string name="app_name">Pal-Restaurant</string>
     <string name="usuario">usuario</string>
     <string name="ingresar_usuario">Ingresar Usuario</string>

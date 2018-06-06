@@ -30,9 +30,14 @@ public class presentarResultados extends AppCompatActivity {
     private static final String IP4 = "http://pruebagamash.esy.es/archPHP/cp6.php?Tipo_Platillo=";
     private static final String IP5 = "http://pruebagamash.esy.es/archPHP/cp7.php?Tipo_Platillo=";
     private static final String IP6 = "http://pruebagamash.esy.es/archPHP/cp8.php?Tipo_Platillo=";
+    private static final String IP_Perfil = "http://pruebagamash.esy.es/archPHP/GetPerfil.php?Nombre=";
     private static final String dos = "&Nombre_Platillo=";
+    private static final String tres = "&Perfil=";
     private String IP;
     private String rest;
+
+    private String perfil;
+    private String respuesta;
 
 
     List<Platillo> platillos;
@@ -44,6 +49,8 @@ public class presentarResultados extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_presentar_resultados);
         final String nombreRestaurante = getIntent().getStringExtra("nombreUsuario");
+
+        final String nombreUsuario = getIntent().getStringExtra("nombreUsuario");
         final String nombrePlatillo = getIntent().getStringExtra("platilloTexto");
         final String nPlatillo = getIntent().getStringExtra("platilloNombre");
 
@@ -56,7 +63,8 @@ public class presentarResultados extends AppCompatActivity {
         platillos = new ArrayList<>();
 
         if(!nombrePlatillo.equals("")){
-            cargarPlatillos(IP0+nombrePlatillo, rest);
+            obtenerPerfil(IP_Perfil+nombreUsuario, nombrePlatillo);
+
         }
         else if(nPlatillo.length() > 0){
             Toast.makeText(presentarResultados.this, nPlatillo, Toast.LENGTH_SHORT).show();
@@ -72,12 +80,35 @@ public class presentarResultados extends AppCompatActivity {
         }
     }
 
+    private void obtenerPerfil(String URL, final String nombrePlatillo){
+        JsonObjectRequest stringRequest = new JsonObjectRequest(URL, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONObject Jsondatos = new JSONObject(response.getString("perfil"));
+                    respuesta = Jsondatos.getString("Perfil");
+                    Toast.makeText(presentarResultados.this,"Perfil: " + respuesta,Toast.LENGTH_SHORT).show();
+                    cargarPlatillos(IP0+nombrePlatillo+tres+respuesta, rest);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(presentarResultados.this, "Error de conexion en el perfil", Toast.LENGTH_SHORT).show();
+                    }
+                });
+        Volley.newRequestQueue(this).add(stringRequest);
+    }
+
     private void cargarPlatillos(String URL, final String resta){
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
-                    Toast.makeText(presentarResultados.this, "CARGANDO...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(presentarResultados.this, "Cargando...", Toast.LENGTH_SHORT).show();
                     JSONArray array = new JSONArray(response);
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject platillo = array.getJSONObject(i);
