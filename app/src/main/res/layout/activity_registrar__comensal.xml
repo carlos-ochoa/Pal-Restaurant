@@ -59,6 +59,19 @@
         android:inputType="textPassword"
         android:textSize="18sp" />
 
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Elije tu perfil de comensal" />
+
+    <Spinner
+        android:id="@+id/perfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
     <Button
         android:id="@+id/btnCrear"
         android:layout_width="150dp"

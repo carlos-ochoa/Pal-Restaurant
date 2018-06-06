@@ -5,8 +5,10 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -43,20 +45,27 @@ public class Registrar_Comensal extends AppCompatActivity {
         pass = (EditText) findViewById(R.id.EditT_Contraseña);
         registrar = (Button) findViewById(R.id.btnCrear);
 
+        final Spinner mySpinner = (Spinner) findViewById(R.id.perfil);
+        ArrayAdapter<String> Adaptador = new ArrayAdapter<String>(Registrar_Comensal.this,
+                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.perfiles));
+        Adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mySpinner.setAdapter(Adaptador);
+
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                registrarWebService(nombre.getText().toString(),nombre_usuario.getText().toString(),pass.getText().toString(), "Comensal");
+                registrarWebService(nombre.getText().toString(),nombre_usuario.getText().toString(),pass.getText().toString(), mySpinner.getSelectedItem().toString(), "Comensal");
             }
         });
     }
 
-    private void registrarWebService(String nombre, String nombre_usuario, String pass, String tipoUsuario){
+    private void registrarWebService(String nombre, String nombre_usuario, String pass, String perfil, String tipoUsuario){
         HashMap<String,String> hashMapToken = new HashMap<>();
         hashMapToken.put("Nombre_Usuario", nombre_usuario);
         hashMapToken.put("Contrasena", pass);
         hashMapToken.put("Tipo_Usuario", tipoUsuario);
+        hashMapToken.put("Perfil", perfil);
         hashMapToken.put("Nombre", nombre);
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_REGISTRAR, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){

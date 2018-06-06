@@ -16,7 +16,7 @@ public class Buscar_Platillo extends AppCompatActivity {
     Button buscar;
     TextView plat;
     RadioButton gourmet, especialidad, familiar, buffet, comida_rapida;
-    String nombreUsuario = getIntent().getStringExtra("nombreUsuario");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class Buscar_Platillo extends AppCompatActivity {
         buffet = findViewById(R.id.radioBtnBuf);
         comida_rapida = findViewById(R.id.radioBtnRap);
 
-
+        final String nombreUsuario = getIntent().getStringExtra("nombreUsuario");
 
         final Spinner mySpinner = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<String> Adaptador = new ArrayAdapter<String>(Buscar_Platillo.this,
@@ -55,7 +55,7 @@ public class Buscar_Platillo extends AppCompatActivity {
                 else if(comida_rapida.isChecked()) platillo = "Comida rápida";
                 Toast.makeText(Buscar_Platillo.this, platillo, Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Buscar_Platillo.this,presentarResultados.class);
-                i.putExtra("nombreUsuario",nombreRestaurante);
+                i.putExtra("nombreUsuario",nombreUsuario);
                 i.putExtra("platilloTexto",platillo);
                 i.putExtra("platilloNombre",nombre);
                 startActivity(i);
