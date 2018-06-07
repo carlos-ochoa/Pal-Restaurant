@@ -3,7 +3,12 @@ package palrestaurant.emm.pal_restaurant;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.Chart;
 import com.github.mikephil.charting.charts.PieChart;
@@ -21,14 +26,19 @@ import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class estadisticas extends AppCompatActivity {
     private PieChart pieChart;
     private BarChart barChart;
-    private String[] preguntas = new String[]{"Pregunta 1","Pregunta 2","Pregunta 3","Pregunta 4","Pregunta 5","Pregunta 6","Pregunta 7","Pregunta 8","Pregunta 9","Pregunta 10"};
-    private int[] sale = new int[]{25,25,10,12,54,23,43,12,23,19};
-    private int[] color = new int[]{Color.BLUE,Color.RED,Color.GRAY,Color.GREEN, Color.YELLOW,Color.CYAN, Color.MAGENTA,Color.BLUE,Color.RED,Color.GRAY};
+    private String[] preguntas = new String[]{"Pregunta 1","Pregunta 2","Pregunta 3","Pregunta 4","Pregunta 5","Pregunta 6","Pregunta 7","Pregunta 8"};
+    private String[] respuestas = new String[8];
+    private int[] sale /*= new int[]{25,25,10,12,54,23,43,12,23,19}*/ = new int[8];
+    private int[] color = new int[]{Color.BLUE,Color.RED,Color.GRAY,Color.GREEN, Color.YELLOW,Color.CYAN, Color.MAGENTA,Color.BLUE};
+    final String IP = "http://pruebagamash.esy.es/archPHP/getEst.php?Nombre_Restaurante=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +46,45 @@ public class estadisticas extends AppCompatActivity {
         setContentView(R.layout.activity_estadisticas);
         pieChart = (PieChart) findViewById(R.id.pie);
         barChart = (BarChart) findViewById(R.id.bar);
-        createCharts();
+        final String nombreRestaurante = getIntent().getStringExtra("nombreRest");
+        Toast.makeText(estadisticas.this,nombreRestaurante,Toast.LENGTH_SHORT).show();
+        llenarDatos(IP+nombreRestaurante);
+
+    }
+
+    private void llenarDatos(String URL){
+        JsonObjectRequest stringRequest = new JsonObjectRequest(URL, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONObject Jsondatos = new JSONObject(response.getString("datos"));
+                    respuestas[0] = Jsondatos.getString("Pre1");
+                    respuestas[1] = Jsondatos.getString("Pre2");
+                    respuestas[2] = Jsondatos.getString("Pre3");
+                    respuestas[3] = Jsondatos.getString("Pre4");
+                    respuestas[4] = Jsondatos.getString("Pre5");
+                    respuestas[5] = Jsondatos.getString("Pre6");
+                    respuestas[6] = Jsondatos.getString("Pre7");
+                    respuestas[7] = Jsondatos.getString("Pre8");
+                    //Toast.makeText(estadisticas.this,Jsondatos.getString("Pre1") + respuestas[1] +respuestas[2] +respuestas[3]+ respuestas[4]+respuestas[5]+respuestas[6]+respuestas[7],Toast.LENGTH_SHORT).show();
+                    for(int i = 0; i < 8 ; i++){
+                        sale[i] = Integer.parseInt(respuestas[i]);
+                    }
+                    //Toast.makeText(estadisticas.this,""+sale[0] + sale[1] +sale[2] +sale[3]+ sale[4]+sale[5]+sale[6]+sale[7],Toast.LENGTH_SHORT).show();
+                    createCharts();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(estadisticas.this, "Error de conexion en el perfil", Toast.LENGTH_SHORT).show();
+                    }
+                });
+        Volley.newRequestQueue(this).add(stringRequest);
+
     }
 
     private Chart getSameChart(Chart chart, String description, int textColor, int background, int animateY){

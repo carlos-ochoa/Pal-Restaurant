@@ -62,11 +62,11 @@ public class presentarResultados extends AppCompatActivity {
 
         platillos = new ArrayList<>();
 
-        if(!nombrePlatillo.equals("")){
+        //if(!nombrePlatillo.equals("")){
             obtenerPerfil(IP_Perfil+nombreUsuario, nombrePlatillo);
 
-        }
-        else if(nPlatillo.length() > 0){
+        //}
+        /*else if(nPlatillo.length() > 0){
             Toast.makeText(presentarResultados.this, nPlatillo, Toast.LENGTH_SHORT).show();
             cargarPlatillos2(IP1+nPlatillo, rest);
         }
@@ -74,10 +74,10 @@ public class presentarResultados extends AppCompatActivity {
             IP = IP2;
             cargarPlatillos(IP+nombrePlatillo);
         }*/
-        else if(!nombrePlatillo.equals("") && !nombrePlatillo.equals("")){
+        /*else if(!nombrePlatillo.equals("") && !nombrePlatillo.equals("")){
             IP = IP3;
             cargarPlatillos3(IP+nombrePlatillo+dos+nPlatillo, rest);
-        }
+        }*/
     }
 
     private void obtenerPerfil(String URL, final String nombrePlatillo){

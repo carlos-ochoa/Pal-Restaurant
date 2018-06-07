@@ -68,7 +68,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.PlatilloViewHolder> {
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(itemView.getContext(),perfilRestauranteComensal.class);
-                    i.putExtra("nombreRest", restaurante);
+                    i.putExtra("nombrePlat", nombre.getText());
                     itemView.getContext().startActivity(i);
                 }
             });

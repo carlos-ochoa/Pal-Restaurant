@@ -65,8 +65,8 @@ public class Registrar_Comensal extends AppCompatActivity {
         hashMapToken.put("Nombre_Usuario", nombre_usuario);
         hashMapToken.put("Contrasena", pass);
         hashMapToken.put("Tipo_Usuario", tipoUsuario);
-        hashMapToken.put("Perfil", perfil);
         hashMapToken.put("Nombre", nombre);
+        hashMapToken.put("Perfil", perfil);
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_REGISTRAR, new JSONObject(hashMapToken), new Response.Listener<JSONObject>(){
             @Override

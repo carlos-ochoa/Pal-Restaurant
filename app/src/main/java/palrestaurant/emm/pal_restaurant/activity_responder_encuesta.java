@@ -95,7 +95,7 @@ public class activity_responder_encuesta extends AppCompatActivity {
             int Pre6, int Pre7, int Pre8
     ){
         HashMap<String,Integer> hashMapToken = new HashMap<>();
-        hashMapToken.put("ID_Restaurante", idRestaurante);
+        hashMapToken.put("Nombre_Restaurante", idRestaurante);
         hashMapToken.put("Valor_Pre1", Pre1);
         hashMapToken.put("Valor_Pre2", Pre2);
         hashMapToken.put("Valor_Pre3", Pre3);

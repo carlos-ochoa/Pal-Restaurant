@@ -17,6 +17,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,11 +28,12 @@ import java.util.HashMap;
 public class perfilRestaurante extends AppCompatActivity {
 
     private static final String IP_BORRCOM = "http://pruebagamash.esy.es/archPHP/Eliminar_Rest_2.php";
+    private static final String IP = "http://pruebagamash.esy.es/archPHP/getRestaurante.php?Nombre_Restaurante=";
 
     Button btnEliminar, btnActualizar, btnCrear, btnLeer, btnEst;
     private VolleyRP volley;
     private RequestQueue mRequest;
-    TextView TVNombreRest, TVNombre_Usuario;
+    TextView TVNombreRest, TVNombre_Usuario, desc, dir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +45,17 @@ public class perfilRestaurante extends AppCompatActivity {
 
         btnLeer = findViewById(R.id.btnQR);
         btnEst = findViewById(R.id.button);
-        btnActualizar  = findViewById(R.id.btnActu);
+        btnActualizar = findViewById(R.id.btnActu);
         btnEliminar = findViewById(R.id.btnEliminar);
         TVNombreRest = findViewById(R.id.TVNombreRest);
+        desc = findViewById(R.id.textView3);
+        dir = findViewById(R.id.textView4);
         TVNombre_Usuario = findViewById(R.id.TVNombreRest);
 
         TVNombreRest.setText(nombreRestaurante);
         TVNombre_Usuario.setText(nombreRestaurante);
+
+        obtenerDatos(IP+nombreRestaurante);
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
@@ -94,11 +100,21 @@ public class perfilRestaurante extends AppCompatActivity {
             }
         });*/
 
+        btnActualizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(perfilRestaurante.this,activity_actualizar_restaurante.class);
+                //i.putExtra("nombreRest",nombreRestaurante);
+                startActivity(i);
+
+            }
+        });
+
         btnEst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(perfilRestaurante.this,estadisticas.class);
-                //i.putExtra("nombreRest",nombreRestaurante);
+                i.putExtra("nombreRest",nombreRestaurante);
                 startActivity(i);
 
             }
@@ -124,6 +140,29 @@ public class perfilRestaurante extends AppCompatActivity {
 
 
 
+    }
+
+    private void obtenerDatos(String URL){
+        JsonObjectRequest stringRequest = new JsonObjectRequest(URL, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONObject Jsondatos = new JSONObject(response.getString("datos"));
+                    TVNombreRest.setText(Jsondatos.getString("Nombre_Restaurante"));
+                    desc.setText(Jsondatos.getString("Descripcion"));
+                    dir.setText(Jsondatos.getString("Direccion"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(perfilRestaurante.this, "Error de conexion en el perfil", Toast.LENGTH_SHORT).show();
+                    }
+                });
+        Volley.newRequestQueue(this).add(stringRequest);
     }
 
     private void BorrarWebService(String Nombre_Restaurante, String Nombre_Usuario) {
