@@ -18,8 +18,11 @@
                 android:id="@+id/nombre_platillo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
                 android:text="Platillo"
-                android:textSize="15sp" />
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/platillo_photo"
@@ -35,8 +38,11 @@
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/nombre_platillo"
                 android:layout_below="@+id/nombre_platillo"
+                android:fontFamily="sans-serif-smallcaps"
                 android:text="Precio"
-                android:textSize="15sp" />
+                android:textColor="@android:color/holo_orange_light"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/desc_platillo"
@@ -44,8 +50,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/nombre_platillo"
                 android:layout_below="@+id/precio_platillo"
+                android:fontFamily="casual"
                 android:text="Descripcion"
-                android:textSize="10sp" />
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="15sp" />
 
         </RelativeLayout>
 

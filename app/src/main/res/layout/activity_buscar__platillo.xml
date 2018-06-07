@@ -17,20 +17,23 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="384dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-smallcaps"
                 android:text="Selecciona y escribe los filtros de búsqueda"
+                android:textColor="@android:color/background_dark"
                 android:textSize="16dp" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="384dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:textColor="#000000"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-smallcaps"
                 android:text="Elija el tipo de restaurante"
+                android:textColor="#000000"
                 android:textSize="16dp" />
 
 
@@ -40,96 +43,97 @@
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@+id/btns">
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Gourmet"
-                android:id="@+id/radioBtnGourmet"
-                android:layout_centerHorizontal="true"
-                android:checked="false"
-                />
-
                 <RadioButton
+                    android:id="@+id/radioBtnGourmet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Especialidad"
+                    android:layout_centerHorizontal="true"
+                    android:checked="false"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Gourmet" />
+
+                <RadioButton
                     android:id="@+id/radioBtnEsp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
                     android:layout_below="@+id/radioBtnGourmet"
-                    android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:checked="false"
-                    />
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Especialidad" />
 
                 <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Familiar"
                     android:id="@+id/radioBtnFam"
-                    android:layout_below="@+id/radioBtnEsp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:checked="false"
-                    />
-
-                <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Buffet"
+                    android:layout_alignParentTop="true"
+                    android:layout_below="@+id/radioBtnEsp"
+                    android:layout_centerHorizontal="true"
+                    android:checked="false"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Familiar" />
+
+                <RadioButton
                     android:id="@+id/radioBtnBuf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/radioBtnFam"
                     android:layout_centerHorizontal="true"
                     android:checked="false"
-                    />
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Buffet" />
 
                 <RadioButton
+                    android:id="@+id/radioBtnRap"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Comida rápida"
-                    android:id="@+id/radioBtnRap"
                     android:layout_below="@+id/radioBtnBuf"
                     android:layout_centerHorizontal="true"
                     android:checked="false"
-                    />
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Comida rápida" />
             </RadioGroup>
 
             <EditText
                 android:id="@+id/txtPlatillo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:hint="Escriba el nombre del platillo a buscar"
-                />
+                android:layout_marginTop="10dp"
+                android:fontFamily="casual"
+                android:hint="Escriba el nombre del platillo a buscar" />
 
             <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:textColor="#000000"
-            android:text="Elija el precio máximo que desea pagar"
-            android:textSize="16dp" />
-            
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Elija el precio máximo que desea pagar"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+
             <Spinner
+                android:id="@+id/spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinner"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                >
-            </Spinner>
+                android:layout_marginTop="10dp"></Spinner>
 
             <Button
                 android:id="@+id/btnBuscar"
-                android:layout_width="100dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="15dp"
-                android:background="#666"
+                android:layout_margin="5dp"
+                android:background="@android:color/darker_gray"
+                android:fontFamily="casual"
                 android:text="Buscar"
+                android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="12sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>

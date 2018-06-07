@@ -18,57 +18,61 @@
         android:layout_height="129dp"
         android:background="@android:color/holo_orange_light" />
 
-            <TextView
-                android:id="@+id/TVNombreRest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/nombre_restaurante"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/descripcion" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/direccion" />
-
-    <Button
-        android:id="@+id/btnQR"
+    <TextView
+        android:id="@+id/TVNombreRest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_blue_light"
-        android:text="Leer código QR"
-        android:textColor="@android:color/white" />
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:text="@string/nombre_restaurante"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:text="@string/descripcion"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:text="@string/direccion"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
     <Button
         android:id="@+id/btnActu"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:background="?android:attr/colorPressedHighlight"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:background="@android:color/darker_gray"
+        android:fontFamily="casual"
         android:text="Actualizar información"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:textSize="17sp"
+        android:textStyle="bold" />
 
 
     <Button
         android:id="@+id/btnEliminar"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_margin="5dp"
         android:layout_marginTop="15dp"
-        android:background="#ff0000"
+        android:background="@color/colorAccent"
+        android:fontFamily="casual"
         android:text="Eliminar cuenta"
         android:textColor="#FFFFFF"
-        android:textSize="17sp" />
-
-
+        android:textSize="17sp"
+        android:textStyle="bold" />
 
     <!--<Button
         android:id="@+id/btnNvoPlat"
@@ -84,10 +88,30 @@
         android:src="@android:drawable/ic_menu_add" />-->
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
+        android:id="@+id/btnQR"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Ver estadisticas" />
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:background="@android:color/holo_red_light"
+        android:fontFamily="casual"
+        android:text="Leer código QR"
+        android:textColor="@android:color/white"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:background="@android:color/holo_blue_dark"
+        android:fontFamily="casual"
+        android:text="Ver estadisticas"
+        android:textColor="@android:color/background_light"
+        android:textSize="17sp"
+        android:textStyle="bold" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv"

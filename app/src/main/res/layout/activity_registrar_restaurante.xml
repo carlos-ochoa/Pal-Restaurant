@@ -16,29 +16,34 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Necesitas escribir la información en los campos para crear tu cuenta"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="16dp" />
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Necesitas escribir la información en los campos para crear tu cuenta"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_dark"
+                tools:layout_editor_absoluteX="42dp"
+                tools:layout_editor_absoluteY="16dp" />
 
-    <EditText
-        android:id="@+id/txtNombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Nombre del restaurante"
-        android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/txtNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:fontFamily="casual"
+                android:hint="Nombre del restaurante"
+                android:inputType="textPersonName" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Password"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="67dp" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Password"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="67dp" />
 
     <EditText
         android:id="@+id/txtPass"
@@ -50,33 +55,36 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="77dp" />
 
-    <EditText
-        android:id="@+id/txtTipo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Tipo"
-        tools:layout_editor_absoluteX="231dp"
-        tools:layout_editor_absoluteY="77dp" />
+            <EditText
+                android:id="@+id/txtTipo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:fontFamily="casual"
+                android:hint="Tipo"
+                android:inputType="textPersonName"
+                tools:layout_editor_absoluteX="231dp"
+                tools:layout_editor_absoluteY="77dp" />
 
-    <EditText
-        android:id="@+id/txtDirec"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Direccion"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="132dp" />
+            <EditText
+                android:id="@+id/txtDirec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:fontFamily="casual"
+                android:hint="Direccion"
+                android:inputType="textPersonName"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="132dp" />
 
-    <TextView
-        android:id="@+id/txtTl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Teléfono"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="189dp" />
+            <TextView
+                android:id="@+id/txtTl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Teléfono"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="189dp" />
 
     <EditText
         android:id="@+id/txtTel"
@@ -87,22 +95,24 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="180dp" />
 
-    <EditText
-        android:id="@+id/txtWeb"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Sitio web"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="252dp" />
+            <EditText
+                android:id="@+id/txtWeb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:fontFamily="casual"
+                android:hint="Sitio web"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="252dp" />
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Descripcion"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="355dp" />
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Descripcion"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="355dp" />
 
     <EditText
         android:id="@+id/txtDesc"
@@ -114,16 +124,20 @@
         tools:layout_editor_absoluteY="384dp" />
 
 
-    <Button
-        android:id="@+id/btnCrear1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:layout_marginTop="7dp"
-        android:text="Crear cuenta "
-        android:textColor="@android:color/background_light"
-        tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="447dp" />
+            <Button
+                android:id="@+id/btnCrear1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@color/colorPrimaryDark"
+                android:fontFamily="casual"
+                android:text="Crear cuenta "
+                android:textColor="@android:color/background_light"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="220dp"
+                tools:layout_editor_absoluteY="447dp" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

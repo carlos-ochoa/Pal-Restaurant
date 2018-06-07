@@ -23,73 +23,83 @@
         android:contentDescription="usuario"
         android:src="@drawable/icono_usuario" />
 
-    <Button
-        android:id="@+id/btnFoto"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:background="#ff8800"
-        android:text="Modificar Foto"
-        android:textColor="#FFFFFF"
-        android:textSize="13sp" />
+            <Button
+                android:id="@+id/btnFoto"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="#ff8800"
+                android:fontFamily="casual"
+                android:text="Modificar Foto"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/EditT_Nombre"
-        style="@style/Widget.AppCompat.AutoCompleteTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Escriba nombre completo"
-        android:inputType="text"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:textSize="19sp" />
+            <EditText
+                android:id="@+id/EditT_Nombre"
+                style="@style/Widget.AppCompat.AutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="casual"
+                android:hint="Escriba nombre completo"
+                android:inputType="text"
+                android:textSize="19sp" />
 
-    <EditText
-        android:id="@+id/EditT_Nombre_Usuario"
-        style="@style/Widget.AppCompat.AutoCompleteTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Escriba nombre de usuario"
-        android:inputType="text"
-        android:layout_marginLeft="5dp"
-        android:paddingTop="15dp"
-        android:textSize="19sp" />
+            <EditText
+                android:id="@+id/EditT_Nombre_Usuario"
+                style="@style/Widget.AppCompat.AutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="casual"
+                android:hint="Escriba nombre de usuario"
+                android:inputType="text"
+                android:paddingTop="15dp"
+                android:textSize="19sp" />
 
-    <EditText
-        android:id="@+id/EditT_NuevaCont"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Escribir nueva contraseña"
-        android:inputType="textPassword"
-        android:textSize="18sp" />
+            <EditText
+                android:id="@+id/EditT_NuevaCont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:hint="Escribir nueva contraseña"
+                android:inputType="textPassword"
+                android:textSize="18sp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:textSize="18dp"
-        android:layout_marginTop="5dp"
-        android:text="Necesitamos tu contraseña actual para continuar:"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Necesitamos tu contraseña actual para continuar:"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="18dp" />
 
-    <EditText
-        android:id="@+id/EditT_Cont"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Contraseña actual"
-        android:inputType="textPassword"
-        android:textSize="18sp" />
+            <EditText
+                android:id="@+id/EditT_Cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:hint="Contraseña actual"
+                android:inputType="textPassword"
+                android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/btnAct"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:background="#666"
-        android:text="Actualizar"
-        android:textColor="#FFFFFF"
-        android:textSize="13sp" />
+            <Button
+                android:id="@+id/btnAct"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="#666"
+                android:fontFamily="casual"
+                android:text="Actualizar"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 

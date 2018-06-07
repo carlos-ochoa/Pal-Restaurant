@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,15 +10,23 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
-        android:text="Por favor escanee el código QR que muestre el comensal" />
+        android:text="Por favor escanee el código QR que muestre el comensal"
+        android:textColor="@android:color/background_dark" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_background"
         android:id="@+id/EscanerQR"
-        android:onClick="EscanerQR"/>
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:background="@android:color/darker_gray"
+        android:fontFamily="casual"
+        android:onClick="EscanerQR"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold"
+        tools:text="Escanear" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"

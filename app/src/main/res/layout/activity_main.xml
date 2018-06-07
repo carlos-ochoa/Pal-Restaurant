@@ -20,16 +20,18 @@
         style="@style/Widget.AppCompat.AutoCompleteTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="casual"
         android:hint="@string/ingresar_usuario"
         android:inputType="text"
-        android:textColor="#FFFFFF"
         android:paddingTop="10dp"
+        android:textColor="#FFFFFF"
         android:textSize="19sp" />
 
     <EditText
         android:id="@+id/EditT_Contraseña"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="casual"
         android:hint="@string/ingresar_contrase_a"
         android:inputType="textPassword"
         android:textSize="19sp" />
@@ -40,10 +42,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="12dp"
-        android:background="@drawable/button_background"
+        android:background="@android:color/darker_gray"
+        android:fontFamily="casual"
         android:text="@string/iniciar"
-        android:textColor="#ffae09"
-        android:textSize="17sp" />
+        android:textColor="@android:color/background_light"
+        android:textSize="17sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnReg"
@@ -51,10 +55,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:background="#ff8800"
+        android:background="@android:color/holo_orange_dark"
+        android:fontFamily="casual"
         android:text="@string/registrarse"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp" />
+        android:textColor="@android:color/background_light"
+        android:textSize="17sp"
+        android:textStyle="bold" />
 
 
 </LinearLayout>

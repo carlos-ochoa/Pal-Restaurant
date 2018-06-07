@@ -26,53 +26,77 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/nombre_restaurante"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
             android:gravity="center"
-            android:text="@string/descripcion" />
+            android:text="@string/descripcion"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/direccion" />
+            android:text="@string/direccion"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
 
         <Button
             android:id="@+id/btnReservar"
-            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:background="@android:color/holo_blue_light"
+            android:background="@android:color/darker_gray"
+            android:fontFamily="casual"
             android:text="Reservar"
             android:textColor="#FFFFFF"
-            android:textSize="17sp" />
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <Button
+
             android:id="@+id/btnEncuesta"
-            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_orange_light"
+            android:layout_gravity="center"
+            android:background="@android:color/holo_orange_dark"
+            android:fontFamily="casual"
             android:text="Encuesta de satisfacción"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnResena"
-            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Escribir reseña" />
+            android:layout_gravity="center"
+            android:background="@android:color/holo_red_dark"
+            android:fontFamily="casual"
+            android:text="Escribir reseña"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Ver reseñas" />
+            android:layout_gravity="center"
+            android:background="@android:color/holo_blue_dark"
+            android:fontFamily="casual"
+            android:text="Ver reseñas"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold" />
 
 
     </LinearLayout>

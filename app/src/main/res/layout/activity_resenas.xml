@@ -20,7 +20,8 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:text="Escriba una resña sobre su visita"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Cuentenos sobre su visita:"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#000000"
             android:textSize="20sp"
@@ -30,7 +31,7 @@
 
         <EditText
             android:id="@+id/eT"
-            android:layout_width="346dp"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
             android:ems="10"
             android:inputType="textMultiLine"
@@ -38,13 +39,15 @@
             tools:layout_editor_absoluteY="225dp" />
 
 
-
         <Button
             android:id="@+id/btn"
-            android:layout_width="346dp"
+            android:layout_width="379dp"
             android:layout_height="48dp"
-            android:background="@color/colorAccent"
+            android:background="@android:color/darker_gray"
+            android:fontFamily="casual"
             android:text="Publicar reseña"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="278dp" />
 

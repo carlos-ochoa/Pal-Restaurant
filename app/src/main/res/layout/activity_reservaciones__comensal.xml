@@ -11,55 +11,61 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
 
-    <TextView
-        android:id="@+id/TVHora"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="Hora"
-        android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/TVHora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:text="Hora"
+                android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/TVFecha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/TVHora"
-        android:layout_below="@+id/TVHora"
-        android:gravity="center"
-        android:text="Fecha"
-        android:textSize="18sp"
-        android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/TVFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/TVHora"
+                android:layout_below="@+id/TVHora"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:text="Fecha"
+                android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/TVMesa"
-        android:gravity="center"
-        android:text="Mesa"
-        android:textSize="18sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/TVHora"
-        android:layout_below="@+id/TVFecha"
-        android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/TVMesa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/TVHora"
+                android:layout_below="@+id/TVFecha"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:text="Mesa"
+                android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/btnCancelar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/TVMesa"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:background="#FF0000"
-        android:text="Cancelar"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp" />
+            <Button
+                android:id="@+id/btnCancelar"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TVMesa"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_marginTop="40dp"
+                android:background="#FF0000"
+                android:fontFamily="casual"
+                android:text="Cancelar"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold" />
 
-     </RelativeLayout>
+        </RelativeLayout>
 
 
 
@@ -67,14 +73,17 @@
 
     <Button
         android:id="@+id/btnAceptar"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TVMesa"
         android:layout_gravity="center"
+        android:layout_margin="5dp"
         android:layout_marginTop="40dp"
         android:background="#666"
+        android:fontFamily="casual"
         android:text="Aceptar"
         android:textColor="#FFFFFF"
-        android:textSize="17sp" />
+        android:textSize="17sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

@@ -12,8 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
         android:text="¿Cómo calificaría la cortesía y trato de los empleados?"
+        android:textColor="@android:color/background_dark"
         android:textSize="22sp" />
 
         <RadioGroup
@@ -23,70 +25,80 @@
         android:layout_alignEnd="@+id/button2">
 
             <RadioButton
+                android:id="@+id/radioButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Muy bueno"
-                android:id="@+id/radioButton1"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:checked="false"
-                />
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Muy bueno" />
 
             <RadioButton
+                android:id="@+id/radioButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bueno"
-                android:id="@+id/radioButton2"
                 android:layout_below="@+id/radioButton1"
                 android:layout_centerHorizontal="true"
                 android:checked="false"
-                />
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Bueno" />
 
             <RadioButton
+                android:id="@+id/radioButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Regular"
-                android:id="@+id/radioButton3"
                 android:layout_below="@+id/radioButton2"
                 android:layout_centerHorizontal="true"
                 android:checked="false"
-                />
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Regular" />
 
             <RadioButton
+                android:id="@+id/radioButton4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Malo"
-                android:id="@+id/radioButton4"
                 android:layout_below="@+id/radioButton3"
                 android:layout_centerHorizontal="true"
                 android:checked="false"
-                />
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Malo" />
 
             <RadioButton
+                android:id="@+id/radioButton5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Muy Malo"
-                android:id="@+id/radioButton5"
                 android:layout_below="@+id/radioButton4"
                 android:layout_centerHorizontal="true"
                 android:checked="false"
-                />
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Muy Malo" />
         </RadioGroup>
 
     <Button
         android:id="@+id/btnSiguiente"
         style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:background="?android:attr/colorPressedHighlight"
-        android:text="Siguiente" />
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray"
+        android:fontFamily="casual"
+        android:text="Siguiente"
+        android:textColor="@android:color/background_light"
+        android:textSize="17sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnFinalizar"
         style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:background="@color/colorAccent"
-        android:text="Finalizar Encuesta" />
+        android:text="Finalizar Encuesta"
+        android:textColor="@android:color/background_light"
+        android:textSize="17sp" />
 
 </LinearLayout>

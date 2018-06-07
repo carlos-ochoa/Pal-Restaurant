@@ -13,17 +13,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
-        android:textColor="#000000"
         android:text="Rellena los datos pedidos para hacer una reservacion en este restaurante."
+        android:textColor="#000000"
         android:textSize="16sp" />
 
     <EditText
         android:id="@+id/etHora"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="casual"
         android:hint="Hora"
         android:inputType="text"
         android:textSize="18sp" />
@@ -32,8 +34,9 @@
         android:id="@+id/etFecha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="casual"
         android:hint="Fecha"
         android:inputType="date"
         android:textSize="18sp" />
@@ -42,8 +45,9 @@
         android:id="@+id/etMesa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="casual"
         android:hint="Mesa"
         android:inputType="number"
         android:textSize="18sp" />
@@ -55,9 +59,11 @@
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
         android:background="#666"
+        android:fontFamily="casual"
         android:text="Aceptar"
         android:textColor="#FFFFFF"
-        android:textSize="17sp" />
+        android:textSize="17sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnCancelar"
@@ -66,9 +72,11 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:background="#FF0000"
+        android:fontFamily="casual"
         android:text="Cancelar"
         android:textColor="#FFFFFF"
-        android:textSize="17sp" />
+        android:textSize="17sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
